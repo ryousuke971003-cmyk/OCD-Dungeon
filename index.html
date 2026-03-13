@@ -32,7 +32,7 @@
       <!-- タイトル -->
       <div class="home-title">
         <h1>🏰 OCDダンジョン</h1>
-        <p class="subtitle">強迫観念を、倒すべき敵に変えよう</p>
+        <p class="subtitle">心の波を静め、穏やかな時間を取り戻そう</p>
       </div>
 
       <!-- 統計 -->
@@ -72,7 +72,7 @@
     <div class="screen-header">
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>⚔️ クエスト選択</h2>
-      <p>今の強迫観念に近い敵を選ぼう</p>
+      <p>今の心の状態に近いキャラクターを選ぼう</p>
     </div>
 
     <div class="enemy-grid" id="enemy-grid">
@@ -82,7 +82,7 @@
     <!-- カスタム敵 -->
     <div class="custom-enemy-section">
       <h3>✨ カスタム敵</h3>
-      <p class="custom-desc">あなただけのオリジナル強迫観念を設定しよう</p>
+      <p class="custom-desc">あなただけのオリジナルの心の影を設定しよう</p>
       <div class="custom-form">
         <input type="text" id="custom-name" class="input-field" placeholder="敵に名前をつけよう（例：ドキドキくん）" maxlength="20" />
         <button class="btn btn-accent" onclick="selectCustomEnemy()">この敵と戦う！</button>
@@ -128,7 +128,7 @@
   <div id="screen-battle" class="screen">
     <div class="battle-header">
       <div class="battle-enemy-name" id="battle-enemy-name"></div>
-      <div class="battle-subtitle">「我慢」してエネルギーをチャージしよう！</div>
+      <div class="battle-subtitle">「今ここ」に意識を向け、心の平穏を取り戻そう</div>
     </div>
 
     <!-- 敵キャラクター -->
@@ -162,7 +162,7 @@
 
     <!-- キャンセルボタン -->
     <button class="btn btn-retreat" id="btn-retreat" onclick="retreatBattle()">
-      🏃 いったん休憩する
+      🏃 自分のペースで休む
     </button>
   </div>
 

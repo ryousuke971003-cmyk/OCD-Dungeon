@@ -85,12 +85,12 @@ const ENEMIES: Enemy[] = [
     avatarType: 'img',
     avatarSrc: '/Users/torigoe971003/.gemini/antigravity/brain/190f1246-15b7-4c2e-81fa-4fc802532f5a/enemy_jirorin_1773398462646.png',
     speechLines: [
-      'ちゃんと確認した？',
-      'もう一回見てみようよ…',
-      '本当に大丈夫？ホントに？',
-      'また何か忘れてるかもよ！',
+      'ゆっくり鼻から吸って…',
+      '３秒止めて、細く吐こう',
+      '周りの音を３つ選んでみて',
+      '今、椅子に触れている感覚を…',
     ],
-    defeatMsg: 'ジロリンを撃破！確認しなくても大丈夫だった！',
+    defeatMsg: 'ジロリンが静まった。心に穏やかな風が吹いている。',
   },
   {
     id: 'dororu',
@@ -126,12 +126,12 @@ const ENEMIES: Enemy[] = [
       <circle cx="76" cy="68" r="5" fill="#7A4F2B" opacity="0.6"/>
     </svg>`,
     speechLines: [
-      'べたべたべたべた…',
-      'どこ触っても汚いよ〜',
-      '洗っても洗っても！',
-      'きたない！きたない！',
+      '自分の手のひらを見つめて…',
+      '指先のあたたかさを感じよう',
+      '足の裏が地面に着く感覚…',
+      'ゆっくりと、深く呼吸して',
     ],
-    defeatMsg: 'ドロルを撃破！洗わなくても安全だった！',
+    defeatMsg: 'ドロルが消えていく。自分自身が守られている安心感。',
   },
   {
     id: 'chiguhagu',
@@ -164,12 +164,12 @@ const ENEMIES: Enemy[] = [
       <rect x="72" y="60" width="6" height="10" rx="2" fill="#FF8C42" opacity="0.7"/>
     </svg>`,
     speechLines: [
-      'なんか非対称！',
-      '右と左が違う…！',
-      '揃えないと気持ち悪い！',
-      'もう一回やり直して！',
+      '目の前のものの形を観察しよう',
+      '色のグラデーションを見てみて',
+      '肩の力を、すとん、と抜いて',
+      '今の自分に「大丈夫」と言おう',
     ],
-    defeatMsg: 'チグハグを撃破！ズレてても問題なかった！',
+    defeatMsg: 'チグハグが調和した。不完全なままで完璧なんだ。',
   },
   {
     id: 'bosori',
@@ -200,12 +200,12 @@ const ENEMIES: Enemy[] = [
       <path d="M 83 30 Q 86 26 89 30 Q 92 34 95 30" stroke="#D0ADFF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
     </svg>`,
     speechLines: [
-      '…ねえ、もしかしたら…',
-      'やっぱり悪いことしたかも',
-      'ボソボソ…ボソボソ…',
-      '誰かを傷つけちゃったかも',
+      '遠くの声や音に耳を澄ませて',
+      '肺が膨らむのを感じよう',
+      '優しい光に包まれている空想を',
+      '心臓の鼓動を、静かに感じて',
     ],
-    defeatMsg: 'ボソリを撃破！その囁きは嘘だった！',
+    defeatMsg: 'ボソリの囁きが消えた。静寂と平安が戻ってきた。',
   },
 ];
 
@@ -424,8 +424,8 @@ function selectCustomEnemy(): void {
       <path d="M 38 62 Q 50 68 62 62" stroke="#558855" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <text x="50" y="88" text-anchor="middle" font-size="11" fill="#3D5A3D" font-family="sans-serif">?</text>
     </svg>`,
-    speechLines: ['ボソボソ…', 'ねえ、気になるよね', 'やっぱり変かも…'],
-    defeatMsg: `${name}を撃破！よく頑張った！`,
+    speechLines: ['今、この瞬間に集中しよう', '心の中に静かな湖をイメージ', '自分のペースで大丈夫だよ'],
+    defeatMsg: `${name}が落ち着いた。あなたは自分を整えることができた。`,
   };
   state.selectedEnemy = customEnemy;
   showScreen('screen-difficulty');
