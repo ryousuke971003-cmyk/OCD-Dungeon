@@ -81,9 +81,29 @@ const ENEMIES: Enemy[] = [
     category: '確認',
     desc: 'たくさんの目で隅々まで確認しようとする…',
     color: '#B2D8FF',
-    // 生成した画像を使用
-    avatarType: 'img',
-    avatarSrc: '/Users/torigoe971003/.gemini/antigravity/brain/190f1246-15b7-4c2e-81fa-4fc802532f5a/enemy_jirorin_1773398462646.png',
+    avatarType: 'svg',
+    avatarSvg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="gradJiro" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFF9C4" />
+          <stop offset="100%" stop-color="#FFD54F" />
+        </radialGradient>
+      </defs>
+      <!-- 体（ゆらゆらした形） -->
+      <path d="M 50 85 C 20 85 15 65 20 45 C 25 25 40 15 55 18 C 70 20 85 35 82 55 C 80 75 70 85 50 85 Z" fill="url(#gradJiro)" opacity="0.9" />
+      <!-- 目（たくさん） -->
+      <circle cx="35" cy="40" r="10" fill="white" />
+      <circle cx="36" cy="41" r="5" fill="#5D4037" />
+      <circle cx="65" cy="35" r="8" fill="white" />
+      <circle cx="66" cy="36" r="4" fill="#5D4037" />
+      <circle cx="50" cy="55" r="7" fill="white" />
+      <circle cx="51" cy="56" r="3.5" fill="#5D4037" />
+      <circle cx="30" cy="65" r="6" fill="white" />
+      <circle cx="31" cy="66" r="3" fill="#5D4037" />
+      <!-- 虫眼鏡の手 -->
+      <circle cx="75" cy="65" r="10" fill="none" stroke="#8D6E63" stroke-width="2" />
+      <line x1="82" y1="72" x2="90" y2="80" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
+    </svg>`,
     speechLines: [
       'ゆっくり鼻から吸って…',
       '３秒止めて、細く吐こう',
@@ -97,33 +117,19 @@ const ENEMIES: Enemy[] = [
     name: 'ドロル',
     category: '不潔・洗浄',
     desc: '全身泥んこ。触るものを全部汚したがる…',
-    color: '#F9D9B0',
+    color: '#D4A57E',
     avatarType: 'svg',
     avatarSvg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- 体 -->
-      <ellipse cx="50" cy="58" rx="38" ry="34" fill="#C4895A"/>
-      <ellipse cx="50" cy="55" rx="36" ry="32" fill="#D4996A"/>
-      <!-- 泥スポット -->
-      <ellipse cx="30" cy="48" rx="10" ry="8" fill="#8B5E3C" opacity="0.7"/>
-      <ellipse cx="62" cy="52" rx="8" ry="6" fill="#8B5E3C" opacity="0.6"/>
-      <ellipse cx="45" cy="68" rx="12" ry="8" fill="#7A4F2B" opacity="0.6"/>
-      <ellipse cx="25" cy="68" rx="7" ry="5" fill="#8B5E3C" opacity="0.5"/>
-      <!-- 足 -->
-      <ellipse cx="34" cy="90" rx="10" ry="8" fill="#C4895A"/>
-      <ellipse cx="66" cy="90" rx="10" ry="8" fill="#C4895A"/>
-      <!-- 目 -->
-      <ellipse cx="37" cy="45" rx="9" ry="10" fill="white"/>
-      <ellipse cx="63" cy="45" rx="9" ry="10" fill="white"/>
-      <circle  cx="39" cy="46" r="6" fill="#3D2B1F"/>
-      <circle  cx="65" cy="46" r="6" fill="#3D2B1F"/>
-      <circle  cx="40" cy="44" r="2" fill="white"/>
-      <circle  cx="66" cy="44" r="2" fill="white"/>
-      <!-- 口（困り顔） -->
-      <path d="M 38 62 Q 50 58 62 62" stroke="#7A4F2B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <!-- 小さな泥の飛び散り -->
-      <circle cx="18" cy="40" r="4" fill="#8B5E3C" opacity="0.6"/>
-      <circle cx="80" cy="35" r="3" fill="#8B5E3C" opacity="0.5"/>
-      <circle cx="76" cy="68" r="5" fill="#7A4F2B" opacity="0.6"/>
+      <path d="M 50 88 C 20 88 10 75 15 55 C 20 35 35 25 50 25 C 65 25 80 35 85 55 C 90 75 80 88 50 88 Z" fill="#8D6E63" />
+      <!-- 泥のポタポタ -->
+      <circle cx="30" cy="85" r="8" fill="#8D6E63" />
+      <circle cx="70" cy="85" r="10" fill="#8D6E63" />
+      <!-- 目（ちょっと困り顔） -->
+      <circle cx="40" cy="50" r="8" fill="white" />
+      <circle cx="42" cy="52" r="4" fill="#5D4037" />
+      <circle cx="60" cy="50" r="8" fill="white" />
+      <circle cx="62" cy="52" r="4" fill="#5D4037" />
+      <path d="M 45 68 Q 50 63 55 68" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" />
     </svg>`,
     speechLines: [
       '自分の手のひらを見つめて…',
@@ -138,30 +144,17 @@ const ENEMIES: Enemy[] = [
     name: 'チグハグ',
     category: '縁起・儀式',
     desc: '左右非対称のまま。完璧にしようとしてイライラ…',
-    color: '#E0D0FF',
+    color: '#A5D6A7',
     avatarType: 'svg',
     avatarSvg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- 足（左右バラバラ） -->
-      <rect x="26" y="82" width="14" height="18" rx="4" fill="#9B7FD4"/>
-      <rect x="60" y="78" width="18" height="22" rx="2" fill="#7C5FBF"/>
-      <!-- 体（非対称ブロック） -->
-      <rect x="28" y="50" width="20" height="35" rx="5" fill="#B08AFF"/>
-      <rect x="48" y="42" width="24" height="43" rx="3" fill="#9B7FD4"/>
-      <!-- 頭（2段重ね） -->
-      <rect x="22" y="20" width="30" height="32" rx="8" fill="#C9ADFF"/>
-      <rect x="50" y="14" width="26" height="26" rx="4" fill="#9B7FD4"/>
-      <!-- 目（左右ズレ） -->
-      <circle cx="34" cy="32" r="7" fill="white"/>
-      <circle cx="34" cy="33" r="4" fill="#3D2B1F"/>
-      <circle cx="35" cy="32" r="1.5" fill="white"/>
-      <ellipse cx="60" cy="26" rx="8" ry="6" fill="white"/>
-      <circle cx="61" cy="26" r="4" fill="#3D2B1F"/>
-      <circle cx="62" cy="25" r="1.5" fill="white"/>
-      <!-- 口（ムスッと） -->
-      <path d="M 30 44 L 44 44" stroke="#7C5FBF" stroke-width="3" stroke-linecap="round"/>
-      <!-- デコボコアクセント -->
-      <rect x="20" y="55" width="8" height="8" rx="2" fill="#FFD740" opacity="0.8"/>
-      <rect x="72" y="60" width="6" height="10" rx="2" fill="#FF8C42" opacity="0.7"/>
+      <rect x="25" y="30" width="30" height="40" fill="#81C784" rx="4" />
+      <rect x="50" y="45" width="25" height="35" fill="#4CAF50" rx="2" />
+      <circle cx="35" cy="20" r="10" fill="#FFEB3B" />
+      <!-- 目（非対称） -->
+      <circle cx="40" cy="45" r="6" fill="white" />
+      <circle cx="40" cy="45" r="3" fill="#5D4037" />
+      <rect x="58" y="55" width="10" height="4" fill="white" />
+      <rect x="62" y="55" width="4" height="4" fill="#5D4037" />
     </svg>`,
     speechLines: [
       '目の前のものの形を観察しよう',
@@ -176,28 +169,18 @@ const ENEMIES: Enemy[] = [
     name: 'ボソリ',
     category: '加害・不道徳',
     desc: '耳元でいじわるな囁きをしてくる小さな影…',
-    color: '#C8F5E0',
+    color: '#CE93D8',
     avatarType: 'svg',
     avatarSvg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- 影の体（ふわふわした形） -->
-      <path d="M 50 90 C 25 90 15 75 18 55 C 10 40 20 15 50 12 C 80 15 90 40 82 55 C 85 75 75 90 50 90 Z" fill="#6B4FA0" opacity="0.7"/>
-      <!-- ハイライト -->
-      <path d="M 50 85 C 30 85 22 72 24 56 C 18 43 27 22 50 19 C 73 22 82 43 76 56 C 78 72 70 85 50 85 Z" fill="#8B6FC0" opacity="0.5"/>
-      <!-- 目（細長い意地悪そうな目） -->
-      <ellipse cx="36" cy="45" rx="9" ry="6" fill="#F5E0FF"/>
-      <ellipse cx="64" cy="45" rx="9" ry="6" fill="#F5E0FF"/>
-      <ellipse cx="36" cy="46" rx="5" ry="4" fill="#3D1F5A"/>
-      <ellipse cx="64" cy="46" rx="5" ry="4" fill="#3D1F5A"/>
-      <circle cx="38" cy="45" r="1.5" fill="white"/>
-      <circle cx="66" cy="45" r="1.5" fill="white"/>
-      <!-- ニヤリ笑い -->
-      <path d="M 35 60 Q 50 70 65 60" stroke="#D0ADFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <!-- 囁きの手 -->
-      <path d="M 20 50 C 10 42 12 36 22 38 C 18 44 20 50 26 52" fill="#6B4FA0" opacity="0.6"/>
-      <path d="M 80 50 C 90 42 88 36 78 38 C 82 44 80 50 74 52" fill="#6B4FA0" opacity="0.6"/>
-      <!-- 波線（囁き） -->
-      <path d="M 5 30 Q 8 26 11 30 Q 14 34 17 30" stroke="#D0ADFF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
-      <path d="M 83 30 Q 86 26 89 30 Q 92 34 95 30" stroke="#D0ADFF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <!-- 影（ふわっとした紫） -->
+      <path d="M 50 85 C 20 85 10 70 15 50 C 20 30 35 15 50 15 C 65 15 80 30 85 50 C 90 70 80 85 50 85 Z" fill="#BA68C8" opacity="0.8" />
+      <!-- 目（ジト目） -->
+      <path d="M 30 45 Q 40 40 50 45" stroke="white" stroke-width="2" fill="none" />
+      <path d="M 50 45 Q 60 40 70 45" stroke="white" stroke-width="2" fill="none" />
+      <circle cx="40" cy="50" r="3" fill="white" />
+      <circle cx="60" cy="50" r="3" fill="white" />
+      <!-- 囁き -->
+      <path d="M 75 40 Q 85 35 80 30" stroke="#E1BEE7" stroke-width="1.5" fill="none" />
     </svg>`,
     speechLines: [
       '遠くの声や音に耳を澄ませて',
@@ -413,16 +396,22 @@ function selectCustomEnemy(): void {
     color: '#D0E8D0',
     avatarType: 'svg',
     avatarSvg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="55" rx="36" ry="32" fill="#88CC88"/>
-      <ellipse cx="50" cy="52" rx="34" ry="30" fill="#AADDAA"/>
-      <circle cx="38" cy="45" r="8" fill="white"/>
-      <circle cx="62" cy="45" r="8" fill="white"/>
-      <circle cx="40" cy="46" r="5" fill="#3D2B1F"/>
-      <circle cx="64" cy="46" r="5" fill="#3D2B1F"/>
-      <circle cx="41" cy="44" r="1.5" fill="white"/>
-      <circle cx="65" cy="44" r="1.5" fill="white"/>
-      <path d="M 38 62 Q 50 68 62 62" stroke="#558855" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <text x="50" y="88" text-anchor="middle" font-size="11" fill="#3D5A3D" font-family="sans-serif">?</text>
+      <!-- 虹色の雲（ナナシ風） -->
+      <defs>
+        <linearGradient id="gradRain" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFCDD2" />
+          <stop offset="50%" stop-color="#E1BEE7" />
+          <stop offset="100%" stop-color="#BBDEFB" />
+        </radialGradient>
+      </defs>
+      <path d="M 50 85 C 20 85 10 70 15 50 C 20 30 35 15 50 15 C 65 15 80 30 85 50 C 90 70 80 85 50 85 Z" fill="url(#gradRain)" opacity="0.7" />
+      <circle cx="40" cy="50" r="6" fill="white" />
+      <circle cx="42" cy="52" r="3" fill="#5D4037" />
+      <circle cx="60" cy="50" r="6" fill="white" />
+      <circle cx="62" cy="52" r="3" fill="#5D4037" />
+      <!-- カスタムタグ -->
+      <rect x="70" y="60" width="20" height="12" fill="white" stroke="#8D6E63" />
+      <text x="80" y="69" text-anchor="middle" font-size="6" fill="#8D6E63">custom</text>
     </svg>`,
     speechLines: ['今、この瞬間に集中しよう', '心の中に静かな湖をイメージ', '自分のペースで大丈夫だよ'],
     defeatMsg: `${name}が落ち着いた。あなたは自分を整えることができた。`,
