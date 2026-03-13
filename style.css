@@ -150,6 +150,35 @@ html, body {
 
 .btn-large { font-size: 1.15rem; padding: 18px 24px; }
 
+/* SVG Icon Styles */
+.svg-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto;
+}
+.btn-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+  display: inline-block;
+}
+.btn-icon-sm {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
+  display: inline-block;
+}
+.header-icon {
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  margin-right: 4px;
+  display: inline-block;
+}
+
 /* ===== ホーム画面 ===== */
 #screen-home {
   position: relative;
