@@ -205,29 +205,29 @@ const DIFFICULTIES: Record<string, Difficulty> = {
 //  メダルデータ
 // =========================================================
 const MEDALS: Medal[] = [
-  { id: 'first',   icon: '⚔️',  name: '初出陣',       condition: '初めての勝利',    threshold: 1   },
-  { id: 'five',    icon: '🥉',  name: '5回クリア',    condition: '5回勝利する',      threshold: 5   },
-  { id: 'ten',     icon: '🥈',  name: '10回クリア',   condition: '10回勝利する',     threshold: 10  },
-  { id: 'twenty',  icon: '🥇',  name: '20回クリア',   condition: '20回勝利する',     threshold: 20  },
-  { id: 'fifty',   icon: '🏆',  name: '50回クリア',   condition: '50回勝利する',     threshold: 50  },
-  { id: 'hundred', icon: '👑',  name: '勇者の称号',   condition: '100回勝利する',   threshold: 100 },
-  { id: 'easy3',   icon: '🌱',  name: '小さな一歩',   condition: 'よわいを3回クリア', threshold: null, special: true },
-  { id: 'hard1',   icon: '🔥',  name: '本気の挑戦',   condition: 'つよいに1回勝つ',  threshold: null, special: true },
+  { id: 'first',   icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20,50 L50,80 L80,20" stroke="#4FC3F7" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M30,20 L60,80 L90,50" stroke="#81D4FA" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`, name: '初出陣',       condition: '初めての勝利',    threshold: 1   },
+  { id: 'five',    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="#CD7F32" opacity="0.8"/><circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4 4"/><text x="50" y="65" text-anchor="middle" font-size="40" fill="white" font-weight="bold">5</text></svg>`, name: '5回クリア',    condition: '5回勝利する',      threshold: 5   },
+  { id: 'ten',     icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="#C0C0C0" opacity="0.8"/><circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4 4"/><text x="50" y="65" text-anchor="middle" font-size="40" fill="white" font-weight="bold">10</text></svg>`, name: '10回クリア',   condition: '10回勝利する',     threshold: 10  },
+  { id: 'twenty',  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="#FFD700" opacity="0.8"/><circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4 4"/><text x="50" y="65" text-anchor="middle" font-size="40" fill="white" font-weight="bold">20</text></svg>`, name: '20回クリア',   condition: '20回勝利する',     threshold: 20  },
+  { id: 'fifty',   icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,80 L70,80 M50,80 L50,60 M30,30 L30,50 Q30,70 50,70 Q70,70 70,50 L70,30 Z" fill="#FFECB3" stroke="#FFD54F" stroke-width="4"/><path d="M20,35 Q15,35 15,45 Q15,55 30,55 M80,35 Q85,35 85,45 Q85,55 70,55" fill="none" stroke="#FFD54F" stroke-width="4"/></svg>`, name: '50回クリア',   condition: '50回勝利する',     threshold: 50  },
+  { id: 'hundred', icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20,60 L20,30 L40,45 L50,20 L60,45 L80,30 L80,60 Z" fill="#FFF9C4" stroke="#FBC02D" stroke-width="4"/><circle cx="50" cy="70" r="5" fill="#FBC02D"/></svg>`, name: '勇者の称号',   condition: '100回勝利する',   threshold: 100 },
+  { id: 'easy3',   icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,80 Q40,60 50,30 Q60,60 50,80" fill="#A5D6A7"/><path d="M50,40 Q30,20 15,35 Q15,50 45,45 M50,40 Q70,20 85,35 Q85,50 55,45" fill="#C8E6C9"/></svg>`, name: '小さな一歩',   condition: 'よわいを3回クリア', threshold: null, special: true },
+  { id: 'hard1',   icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,90 Q30,70 30,40 Q30,10 50,30 Q70,10 70,40 Q70,70 50,90" fill="#FF8A65" opacity="0.8"/><path d="M50,80 Q40,65 40,45 Q40,25 50,40 Q60,25 60,45 Q60,65 50,80" fill="#FF5722"/></svg>`, name: '本気の挑戦',   condition: 'つよいに1回勝つ',  threshold: null, special: true },
 ];
 
 // =========================================================
 //  リラックスグッズデータ（レベルアップ報酬）
 // =========================================================
 const RELAX_GOODS: RelaxGood[] = [
-  { level: 2,  icon: '☕',  name: 'ホットコーヒー',       desc: 'ほんのり温かい一杯',      style: 'bottom:10%; left:10%' },
-  { level: 3,  icon: '🕯️', name: 'アロマキャンドル',     desc: 'やわらかな香りが広がる',  style: 'bottom:30%; right:8%' },
-  { level: 4,  icon: '🛋️', name: 'ふかふかクッション',   desc: 'もふもふで心地よい',      style: 'bottom:5%; right:20%' },
-  { level: 5,  icon: '🌿',  name: 'ちいさな観葉植物',    desc: '緑が癒しをくれる',        style: 'bottom:15%; left:35%' },
-  { level: 6,  icon: '📚',  name: 'お気に入りの本',       desc: '読むたびほっとする',      style: 'bottom:40%; left:5%' },
-  { level: 7,  icon: '🎵',  name: 'レコードプレイヤー',  desc: 'のんびりした音楽',        style: 'bottom:60%; right:10%' },
-  { level: 8,  icon: '🌙',  name: 'ムーンランプ',         desc: '夜を照らすやさしい光',    style: 'bottom:70%; left:8%' },
-  { level: 9,  icon: '🧸',  name: 'くまのぬいぐるみ',    desc: 'そっと抱きしめよう',      style: 'bottom:20%; right:35%' },
-  { level: 10, icon: '🛁',  name: 'バブルバス',           desc: 'ゆっくりお風呂でリラックス', style: 'bottom:5%; left:50%' },
+  { level: 2,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,40 L70,40 L65,80 L35,80 Z" fill="#D7CCC8"/><path d="M70,45 Q80,45 80,55 Q80,65 65,65" fill="none" stroke="#A1887F" stroke-width="4"/><path d="M45,20 Q50,10 55,20 M35,25 Q40,15 45,25 M55,25 Q60,15 65,25" fill="none" stroke="#BDBDBD" stroke-width="2" stroke-linecap="round"/></svg>`,  name: 'ホットコーヒー',       desc: 'ほんのり温かい一杯',      style: 'bottom:10%; left:10%' },
+  { level: 3,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="40" width="20" height="45" rx="4" fill="#F5F5F5"/><path d="M50,40 Q45,30 50,15 Q55,30 50,40" fill="#FFD54F"><animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/></path></svg>`, name: 'アロマキャンドル',     desc: 'やわらかな香りが広がる',  style: 'bottom:30%; right:8%' },
+  { level: 4,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20,30 Q20,20 30,20 L70,20 Q80,20 80,30 L80,70 Q80,80 70,80 L30,80 Q20,80 20,70 Z" fill="#FFE0B2"/><path d="M30,35 L70,35 M30,50 L70,50 M30,65 L70,65" fill="none" stroke="#FFCC80" stroke-width="2" stroke-linecap="round"/></svg>`, name: 'ふかふかクッション',   desc: 'もふもふで心地よい',      style: 'bottom:5%; right:20%' },
+  { level: 5,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="70" width="30" height="20" fill="#BCAAA4"/><path d="M50,70 V40 M50,60 Q30,40 20,50 M50,55 Q70,35 80,45" fill="none" stroke="#66BB6A" stroke-width="4" stroke-linecap="round"/><circle cx="20" cy="50" r="5" fill="#81C784"/><circle cx="80" cy="45" r="5" fill="#81C784"/><circle cx="50" cy="40" r="5" fill="#81C784"/></svg>`,  name: 'ちいさな観葉植物',    desc: '緑が癒しをくれる',        style: 'bottom:15%; left:35%' },
+  { level: 6,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,20 L50,25 V85 L30,80 Z" fill="#E1BEE7"/><path d="M70,20 L50,25 V85 L70,80 Z" fill="#F3E5F5"/><path d="M35,30 H45 M35,40 H45 M35,50 H45" fill="none" stroke="#CE93D8" stroke-width="2"/></svg>`,  name: 'お気に入りの本',       desc: '読むたびほっとする',      style: 'bottom:40%; left:5%' },
+  { level: 7,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="50" width="60" height="40" rx="4" fill="#8D6E63"/><circle cx="50" cy="40" r="30" fill="#424242"/><circle cx="50" cy="40" r="5" fill="#9E9E9E"/><path d="M70,20 L55,40" fill="none" stroke="#BDBDBD" stroke-width="3" stroke-linecap="round"/></svg>`,  name: 'レコードプレイヤー',  desc: 'のんびりした音楽',        style: 'bottom:60%; right:10%' },
+  { level: 8,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="#FFF59D" opacity="0.9"/><path d="M50,10 Q30,50 50,90 Q70,50 50,10" fill="#FFF9C4" opacity="0.5"/><circle cx="35" cy="40" r="2" fill="white" opacity="0.6"/><circle cx="65" cy="55" r="3" fill="white" opacity="0.4"/></svg>`,         name: 'ムーンランプ',         desc: '夜を照らすやさしい光',    style: 'bottom:70%; left:8%' },
+  { level: 9,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="40" r="20" fill="#D7CCC8"/><circle cx="50" cy="70" r="25" fill="#D7CCC8"/><circle cx="35" cy="25" r="8" fill="#D7CCC8"/><circle cx="65" cy="25" r="8" fill="#D7CCC8"/><circle cx="43" cy="35" r="3" fill="#5D4037"/><circle cx="57" cy="35" r="3" fill="#5D4037"/><path d="M45,45 Q50,50 55,45" fill="none" stroke="#A1887F" stroke-width="2"/></svg>`,    name: 'くまのぬいぐるみ',    desc: 'そっと抱きしめよう',      style: 'bottom:20%; right:35%' },
+  { level: 10, icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M15,50 Q15,85 50,85 Q85,85 85,50 L85,40 H15 Z" fill="#E1F5FE"/><circle cx="30" cy="35" r="8" fill="white" opacity="0.7"/><circle cx="50" cy="30" r="10" fill="white" opacity="0.6"/><circle cx="70" cy="35" r="7" fill="white" opacity="0.8"/></svg>`,           desc: 'ゆっくりお風呂でリラックス', style: 'bottom:5%; left:50%', name: 'バブルバス' },
 ];
 
 // XPテーブル（レベルに必要なXP累計）
@@ -332,7 +332,7 @@ function renderRoomGoods(): void {
   unlockedGoods.forEach((g, i) => {
     const el = document.createElement('div');
     el.className = 'home-furniture-item';
-    el.textContent = g.icon;
+    el.innerHTML = g.icon;
     el.title = g.name;
     el.style.cssText = g.style;
     el.style.animationDelay = `${i * 0.1}s`;
@@ -652,7 +652,7 @@ function showVictoryScreen(xp: number, newMedals: Medal[], leveledUp: boolean, n
   const medalPopup = getEl('new-medal-popup');
   if (newMedals.length > 0) {
     medalPopup.style.display = 'block';
-    getEl('new-medal-icon').textContent = newMedals[0].icon;
+    getEl('new-medal-icon').innerHTML = newMedals[0].icon;
   } else {
     medalPopup.style.display = 'none';
   }
@@ -661,7 +661,7 @@ function showVictoryScreen(xp: number, newMedals: Medal[], leveledUp: boolean, n
   const goodsPopup = getEl('new-goods-popup');
   if (newGoods) {
     goodsPopup.style.display = 'block';
-    getEl('new-goods-icon').textContent = newGoods.icon;
+    getEl('new-goods-icon').innerHTML = newGoods.icon;
     getEl('new-goods-name').textContent = newGoods.name;
   } else {
     goodsPopup.style.display = 'none';
@@ -695,7 +695,7 @@ function createExplosionParticles(): void {
 function showLevelUpModal(): void {
   getEl('levelup-new-level').textContent = String(saveData.level);
   const goods = RELAX_GOODS.find(g => g.level === saveData.level) ?? { icon: '🎁', name: 'サプライズ' };
-  getEl('levelup-goods-icon').textContent = goods.icon;
+  getEl('levelup-goods-icon').innerHTML = goods.icon;
   getEl('levelup-goods-name').textContent = goods.name;
   getEl('levelup-modal').style.display = 'flex';
 }
