@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCDダンジョン ⚔️</title>
+  <meta name="description" content="強迫観念を倒すべき敵として可視化し、ERP（曝露反応妨害法）をゲーム感覚で楽しく続けられるアプリ。" />
+  <!-- Google Fonts: M PLUS Rounded 1c -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/index-BTM6aycI.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-GzEspjYw.css">
+</head>
+<body>
+
+  <!-- ===== ホーム / 自室画面 ===== -->
+  <div id="screen-home" class="screen active">
+    <div class="home-room" id="home-room">
+      <!-- 部屋の装飾アイテム（グッズ）がJSで追加される -->
+    </div>
+
+    <div class="home-ui">
+      <!-- プレイヤー情報 -->
+      <div class="player-info">
+        <div class="level-badge">Lv.<span id="player-level">1</span></div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar" id="xp-bar"></div>
+        </div>
+        <div class="xp-text"><span id="xp-current">0</span> / <span id="xp-max">100</span> XP</div>
+      </div>
+
+      <!-- タイトル -->
+      <div class="home-title">
+        <h1>🏰 OCDダンジョン</h1>
+        <p class="subtitle">強迫観念を、倒すべき敵に変えよう</p>
+      </div>
+
+      <!-- 統計 -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon">⚔️</div>
+          <div class="stat-value" id="total-wins">0</div>
+          <div class="stat-label">総勝利数</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏅</div>
+          <div class="stat-value" id="total-medals">0</div>
+          <div class="stat-label">メダル</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔥</div>
+          <div class="stat-value" id="streak-count">0</div>
+          <div class="stat-label">連続日数</div>
+        </div>
+      </div>
+
+      <!-- アクションボタン -->
+      <div class="home-actions">
+        <button id="btn-start-quest" class="btn btn-primary btn-large" onclick="showScreen('screen-select')">
+          ⚔️ クエストへ出発！
+        </button>
+        <div class="home-sub-buttons">
+          <button class="btn btn-secondary" onclick="showScreen('screen-medals')">🏅 メダル図鑑</button>
+          <button class="btn btn-secondary" onclick="showScreen('screen-goods')">🎁 グッズ図鑑</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 敵選択画面 ===== -->
+  <div id="screen-select" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
+      <h2>⚔️ クエスト選択</h2>
+      <p>今の強迫観念に近い敵を選ぼう</p>
+    </div>
+
+    <div class="enemy-grid" id="enemy-grid">
+      <!-- 敵カードはJSで生成 -->
+    </div>
+
+    <!-- カスタム敵 -->
+    <div class="custom-enemy-section">
+      <h3>✨ カスタム敵</h3>
+      <p class="custom-desc">あなただけのオリジナル強迫観念を設定しよう</p>
+      <div class="custom-form">
+        <input type="text" id="custom-name" class="input-field" placeholder="敵に名前をつけよう（例：ドキドキくん）" maxlength="20" />
+        <button class="btn btn-accent" onclick="selectCustomEnemy()">この敵と戦う！</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 難易度選択画面 ===== -->
+  <div id="screen-difficulty" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="showScreen('screen-select')">← もどる</button>
+      <h2>⚡ 難易度選択</h2>
+      <p>今日の自分の状態に合わせて選ぼう</p>
+    </div>
+
+    <div class="selected-enemy-preview" id="selected-enemy-preview">
+      <!-- 選択した敵のプレビューがJSで入る -->
+    </div>
+
+    <div class="difficulty-cards">
+      <button class="difficulty-card difficulty-easy" onclick="startBattle('easy')" id="diff-easy">
+        <div class="diff-icon">🌱</div>
+        <div class="diff-name">よわい</div>
+        <div class="diff-time">30秒</div>
+        <div class="diff-desc">ちょっとだけ試してみる</div>
+      </button>
+      <button class="difficulty-card difficulty-normal" onclick="startBattle('normal')" id="diff-normal">
+        <div class="diff-icon">⚡</div>
+        <div class="diff-name">ふつう</div>
+        <div class="diff-time">90秒</div>
+        <div class="diff-desc">いつもどおりに挑戦</div>
+      </button>
+      <button class="difficulty-card difficulty-hard" onclick="startBattle('hard')" id="diff-hard">
+        <div class="diff-icon">🔥</div>
+        <div class="diff-name">つよい</div>
+        <div class="diff-time">180秒</div>
+        <div class="diff-desc">本気で立ち向かう</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== 戦闘画面 ===== -->
+  <div id="screen-battle" class="screen">
+    <div class="battle-header">
+      <div class="battle-enemy-name" id="battle-enemy-name"></div>
+      <div class="battle-subtitle">「我慢」してエネルギーをチャージしよう！</div>
+    </div>
+
+    <!-- 敵キャラクター -->
+    <div class="enemy-display" id="enemy-display">
+      <div class="enemy-aura" id="enemy-aura"></div>
+      <div class="enemy-sprite" id="enemy-sprite"></div>
+      <div class="enemy-speech-bubble" id="enemy-speech-bubble"></div>
+    </div>
+
+    <!-- エネルギーチャージゲージ -->
+    <div class="charge-section">
+      <div class="charge-label">⚡ エネルギーチャージ</div>
+      <div class="charge-bar-wrap">
+        <div class="charge-bar" id="charge-bar">
+          <div class="charge-glow"></div>
+        </div>
+      </div>
+      <div class="charge-percent" id="charge-percent">0%</div>
+    </div>
+
+    <!-- タイマー -->
+    <div class="timer-display">
+      <div class="timer-circle" id="timer-circle">
+        <svg class="timer-svg" viewBox="0 0 100 100">
+          <circle class="timer-bg" cx="50" cy="50" r="45" />
+          <circle class="timer-progress" id="timer-progress" cx="50" cy="50" r="45" />
+        </svg>
+        <div class="timer-text" id="timer-text">--</div>
+      </div>
+    </div>
+
+    <!-- キャンセルボタン -->
+    <button class="btn btn-retreat" id="btn-retreat" onclick="retreatBattle()">
+      🏃 いったん休憩する
+    </button>
+  </div>
+
+  <!-- ===== 撃破演出画面 ===== -->
+  <div id="screen-victory" class="screen">
+    <div class="victory-content">
+      <div class="victory-cannon-wrap">
+        <div class="cannon-beam" id="cannon-beam"></div>
+      </div>
+      <div class="victory-enemy" id="victory-enemy"></div>
+      <div class="explosion-particles" id="explosion-particles"></div>
+
+      <h2 class="victory-title" id="victory-title">撃破！！</h2>
+      <p class="victory-msg" id="victory-msg"></p>
+
+      <!-- 獲得報酬 -->
+      <div class="victory-rewards" id="victory-rewards">
+        <div class="reward-item">
+          <span class="reward-icon">✨</span>
+          <span class="reward-label">+<span id="reward-xp">0</span> XP</span>
+        </div>
+      </div>
+
+      <!-- 新メダル獲得（条件達成時のみ表示） -->
+      <div class="new-medal-popup" id="new-medal-popup" style="display:none;">
+        <div class="medal-shine"></div>
+        <div class="medal-icon" id="new-medal-icon"></div>
+        <div class="medal-text">新しいメダルを獲得！</div>
+      </div>
+
+      <!-- 新グッズ獲得（レベルアップ時のみ表示） -->
+      <div class="new-goods-popup" id="new-goods-popup" style="display:none;">
+        <div class="goods-icon" id="new-goods-icon"></div>
+        <div class="goods-text">新しいグッズをゲット！</div>
+        <div class="goods-name" id="new-goods-name"></div>
+      </div>
+
+      <button class="btn btn-primary" onclick="showScreen('screen-home')" style="margin-top:24px;">
+        🏰 お部屋にもどる
+      </button>
+      <button class="btn btn-secondary" onclick="showScreen('screen-select')" style="margin-top:8px;">
+        ⚔️ 続けて戦う
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== メダル図鑑画面 ===== -->
+  <div id="screen-medals" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
+      <h2>🏅 メダル図鑑</h2>
+      <p>努力の証を集めよう</p>
+    </div>
+    <div class="medals-grid" id="medals-grid">
+      <!-- メダルカードはJSで生成 -->
+    </div>
+  </div>
+
+  <!-- ===== グッズ図鑑画面 ===== -->
+  <div id="screen-goods" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
+      <h2>🎁 グッズ図鑑</h2>
+      <p>レベルアップで集まるリラックスグッズ</p>
+    </div>
+    <div class="goods-grid" id="goods-grid">
+      <!-- グッズカードはJSで生成 -->
+    </div>
+  </div>
+
+  <!-- ===== レベルアップモーダル ===== -->
+  <div id="levelup-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content levelup-modal">
+      <div class="levelup-burst"></div>
+      <div class="levelup-stars">⭐⭐⭐</div>
+      <h2>レベルアップ！</h2>
+      <div class="levelup-level">Lv.<span id="levelup-new-level">2</span></div>
+      <div class="levelup-goods">
+        <div class="levelup-goods-icon" id="levelup-goods-icon"></div>
+        <div class="levelup-goods-name" id="levelup-goods-name"></div>
+        <div class="levelup-goods-desc">をプレゼント🎁</div>
+      </div>
+      <button class="btn btn-primary" onclick="closeLevelUpModal()">やったー！</button>
+    </div>
+  </div>
+
+  <!-- ===== 撤退確認モーダル ===== -->
+  <div id="retreat-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content">
+      <div class="retreat-icon">🏃</div>
+      <h3>休憩する？</h3>
+      <p>ペナルティはないよ。<br>また挑戦しよう！</p>
+      <div class="modal-buttons">
+        <button class="btn btn-primary" onclick="confirmRetreat()">うん、休憩する</button>
+        <button class="btn btn-secondary" onclick="closeRetreatModal()">もう少し頑張る！</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
