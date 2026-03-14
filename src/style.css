@@ -221,7 +221,7 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  padding: 80px 20px 20px;
+  padding: 160px 20px 20px; /* UIの下に来るように調整 */
   gap: 15px;
   justify-content: center;
 }
@@ -307,23 +307,14 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* 上寄せ */
   min-height: 100vh;
-  padding: 24px 16px;
-  gap: 16px;
+  padding: 60px 16px 24px; /* 上部にタイトル用の余白を確保 */
+  gap: 20px;
+  pointer-events: none;
 }
-
-/* ホームのUI層 */
-.home-ui {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 24px 16px;
-  gap: 16px;
+.home-ui > * {
+  pointer-events: auto;
 }
 
 /* タイトルバナー */
