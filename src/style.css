@@ -50,11 +50,12 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
+  height: -webkit-fill-available;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   background: var(--bg-sand);
   color: var(--text-main);
-  overflow-x: hidden;
+  overflow: hidden;
   line-height: 1.6;
 }
 
@@ -62,9 +63,11 @@ html, body {
 .screen {
   display: none;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  height: -webkit-fill-available;
   padding: 16px;
   animation: fadeIn 0.3s ease;
+  overflow: hidden;
 }
 .screen.active {
   display: flex;
@@ -77,9 +80,10 @@ html, body {
 /* ===== 共通ヘッダー ===== */
 .screen-header {
   text-align: center;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   margin-bottom: 8px;
   position: relative;
+  flex-shrink: 0;
 }
 .screen-header h2 {
   font-size: 1.6rem;
@@ -199,9 +203,18 @@ html, body {
 /* ===== ホーム画面 ===== */
 #screen-home {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  height: -webkit-fill-available;
   overflow: hidden;
   padding: 0;
+}
+
+/* スクロール可能なコンテンツエリア */
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px;
 }
 
 /* シンプルな背景 */
@@ -264,12 +277,13 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around; /* space-between よりバランス重視 */
   height: 100vh;
-  padding: 30px 16px;
+  height: -webkit-fill-available;
+  padding: 20px 16px;
   gap: 15px;
   pointer-events: none;
-  overflow: hidden; /* スクロール防止 */
+  overflow: hidden;
 }
 .home-ui > * {
   pointer-events: auto;
@@ -346,6 +360,9 @@ html, body {
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   margin-bottom: 24px;
+  overflow-y: auto;
+  flex: 1;
+  padding: 4px;
 }
 
 .enemy-card {
@@ -491,6 +508,8 @@ html, body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  justify-content: space-between;
+  padding-bottom: 30px;
 }
 #screen-battle::before {
   content: '';
@@ -524,7 +543,8 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px 0;
+  flex: 1;
+  width: 100%;
   z-index: 10;
   cursor: pointer;
   touch-action: manipulation;
@@ -748,7 +768,7 @@ html, body {
   color: #fff;
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  overflow-y: auto;
 }
 .victory-content {
   display: flex;
@@ -894,6 +914,9 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+  overflow-y: auto;
+  flex: 1;
+  padding: 4px;
 }
 .medal-card {
   background: var(--card-bg);
@@ -925,6 +948,9 @@ html, body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
+  overflow-y: auto;
+  flex: 1;
+  padding: 4px;
 }
 .goods-card {
   background: var(--card-bg);
@@ -1005,7 +1031,8 @@ html, body {
 
 
 /* ===== スクロール ===== */
-.screen { overflow-y: auto; }
+/* 個別画面でのスクロール制御は各グリッド等で行うため、ここは不要 */
+/* .screen { overflow-y: auto; } */
 
 /* ===== アニメーション補足 ===== */
 @keyframes shake {
