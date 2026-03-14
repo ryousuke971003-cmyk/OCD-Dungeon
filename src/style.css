@@ -374,8 +374,6 @@ body::before {
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   margin-bottom: 24px;
-  overflow-y: auto;
-  flex: 1;
   padding: 4px;
 }
 
@@ -389,11 +387,12 @@ body::before {
   box-shadow: 0 4px 14px var(--shadow);
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   position: relative;
-  min-height: 180px; /* 説明文削除に合わせて高さを調整 */
+  min-height: 190px; /* 少し余裕を持たせる */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 8px;
+  gap: 10px;
+  padding-bottom: 24px; /* 下部に余白を追加して内容を収める */
 }
 .enemy-card::before {
   content: '';
@@ -448,10 +447,10 @@ body::before {
 .custom-enemy-section {
   background: var(--card-bg);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 24px 20px;
   box-shadow: 0 4px 14px var(--shadow);
   text-align: center;
-  margin-bottom: 16px;
+  margin: 24px 0 40px; /* 上下のマージンを増やして独立させる */
 }
 .custom-enemy-section h3 { font-size: 1.1rem; font-weight: 800; color: var(--purple); }
 .custom-desc { font-size: 0.85rem; color: var(--text-sub); margin: 6px 0 14px; }
