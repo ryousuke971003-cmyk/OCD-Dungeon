@@ -586,13 +586,18 @@ function retreatBattle(): void {
 }
 
 function confirmRetreat(): void {
-  closeRetreatModal();
+  // タイマーを完全に破棄してホームに戻る
+  getEl('retreat-modal').style.display = 'none';
+  if (state.timerInterval !== null) clearInterval(state.timerInterval);
+  if (state.speechInterval !== null) clearInterval(state.speechInterval);
+  state.timerInterval = null;
+  state.speechInterval = null;
   showScreen('screen-home');
 }
 
 function closeRetreatModal(): void {
   getEl('retreat-modal').style.display = 'none';
-  // タイマーが残っていれば再開
+  // 戻らず戦闘再開する（キャンセル）場合のみタイマー再開
   if (state.timerRemaining > 0 && state.currentScreen === 'screen-battle') {
     startTimer();
   }
