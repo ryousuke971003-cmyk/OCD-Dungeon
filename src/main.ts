@@ -293,6 +293,14 @@ function getEl(id: string): HTMLElement {
 //  画面切り替え
 // =========================================================
 function showScreen(id: string): void {
+  // 戦闘画面以外に遷移する場合はタイマーを強制リセット
+  if (id !== 'screen-battle') {
+    if (state.timerInterval !== null) clearInterval(state.timerInterval);
+    if (state.speechInterval !== null) clearInterval(state.speechInterval);
+    state.timerInterval = null;
+    state.speechInterval = null;
+  }
+
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const target = document.getElementById(id);
   if (target) target.classList.add('active');
