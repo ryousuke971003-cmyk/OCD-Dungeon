@@ -24,16 +24,6 @@
 
     <div class="home-ui">
       <!-- プレイヤー情報（コイン表示） -->
-      <div class="player-info coin-info">
-        <div class="coin-icon">
-          <svg viewBox="0 0 100 100" class="svg-icon">
-            <circle cx="50" cy="50" r="40" fill="#FFD700" stroke="#B8860B" stroke-width="2"/>
-            <text x="50" y="65" font-family="sans-serif" font-size="40" font-weight="bold" fill="#FFF" text-anchor="middle">C</text>
-          </svg>
-        </div>
-        <div class="coin-text"><span id="coin-count">0</span> コイン</div>
-      </div>
-
       <!-- タイトル -->
       <div class="home-title">
         <div class="title-banner">
@@ -44,6 +34,16 @@
 
       <!-- 統計 -->
       <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 100 100" class="svg-icon">
+              <circle cx="50" cy="50" r="40" fill="#FFD700" stroke="#B8860B" stroke-width="2"/>
+              <text x="50" y="65" font-family="sans-serif" font-size="40" font-weight="bold" fill="#FFF" text-anchor="middle">C</text>
+            </svg>
+          </div>
+          <div class="stat-value" id="coin-count">0</div>
+          <div class="stat-label">コイン</div>
+        </div>
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
