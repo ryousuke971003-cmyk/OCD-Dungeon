@@ -389,10 +389,11 @@ body::before {
   box-shadow: 0 4px 14px var(--shadow);
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   position: relative;
-  min-height: 220px; /* 最小高さを確保 */
+  min-height: 180px; /* 説明文削除に合わせて高さを調整 */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 8px;
 }
 .enemy-card::before {
   content: '';
@@ -435,15 +436,12 @@ body::before {
   color: var(--text);
 }
 .enemy-category {
-  font-size: 0.78rem;
-  color: var(--text-sub);
+  font-size: 0.9rem; /* カテゴリーを少し目立たせる */
+  color: var(--text-soft);
   margin-top: 4px;
 }
 .enemy-desc {
-  font-size: 0.8rem;
-  color: var(--text-sub);
-  margin-top: 6px;
-  line-height: 1.5;
+  display: none; /* 個別画面では非表示にする */
 }
 
 /* カスタム敵 */

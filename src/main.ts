@@ -398,7 +398,6 @@ function renderEnemySelect(): void {
       <div class="enemy-avatar">${buildAvatarHTML(enemy, false)}</div>
       <div class="enemy-name">${enemy.name}</div>
       <div class="enemy-category">${enemy.category}</div>
-      <div class="enemy-desc">${enemy.desc}</div>
     `;
     card.addEventListener('click', () => selectEnemy(enemy));
     grid.appendChild(card);
@@ -471,11 +470,10 @@ function renderDifficultyScreen(): void {
   const preview = getEl('selected-enemy-preview');
   const enemy = state.selectedEnemy;
   if (!enemy) return;
-  preview.innerHTML = `
-    <div style="width:90px;height:90px;margin:0 auto 10px;">${buildAvatarHTML(enemy)}</div>
-    <div class="preview-name">${enemy.name}（${enemy.category}）</div>
-    <div class="enemy-desc" style="margin-top:8px;">${enemy.desc}</div>
-  `;
+    preview.innerHTML = `
+      <div style="width:90px;height:90px;margin:0 auto 10px;">${buildAvatarHTML(enemy)}</div>
+      <div class="preview-name">${enemy.name}（${enemy.category}）</div>
+    `;
 }
 
 // =========================================================
