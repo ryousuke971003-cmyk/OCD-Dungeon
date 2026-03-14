@@ -8,10 +8,14 @@
 :root {
   /* 新しいカラーパレット：暖かみのある水彩画風 */
   --bg-sand:      #FDF6E9; /* 背景のベース */
+  --bg-room:      #F7E9D7; /* 部屋全体のトーン */
   --bg-paper:     #FFFDF9; /* カード・紙の質感 */
   --border-sepia: #D2B48C; /* 境界線（セピア） */
   --text-main:    #5D4037; /* メインテキスト（深い茶） */
   --text-soft:    #8D6E63; /* サブテキスト */
+  --wood-dark:    #8D6E63;
+  --wood-light:   #D4A57E;
+  --curtain-bg:   #F8B195;
   
   --color-jirorin:  #B2D8FF; /* 確認族 */
   --color-dororu:   #D4A57E; /* 不潔族 */
@@ -206,10 +210,101 @@ html, body {
   inset: 0;
   display: flex;
   flex-direction: column;
-  background: 
-    radial-gradient(circle at 50% 50%, #FFF9C4 0%, transparent 100%),
-    #FDF6E9;
+  background: var(--bg-room);
   overflow: hidden;
+}
+
+/* 背景装飾層 */
+.room-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 窓 */
+.room-window {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 160px;
+  background: #FFF;
+  border: 8px solid #E8D5C0;
+  border-radius: 4px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+.window-view {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #E3F2FD, #FFF);
+}
+.window-frame {
+  position: absolute;
+  top: 50%; left: 0; right: 0; height: 2px; background: #E8D5C0;
+}
+.window-frame::after {
+  content: ''; position: absolute; left: 50%; top: -80px; bottom: -80px; width: 2px; background: #E8D5C0; transform: translateX(-50%);
+}
+
+/* カーテン */
+.room-curtain {
+  position: absolute;
+  top: 12%;
+  width: 80px;
+  height: 200px;
+  background: var(--curtain-bg);
+  border-radius: 10px;
+  opacity: 0.8;
+  filter: drop-shadow(2px 2px 10px rgba(0,0,0,0.1));
+}
+.room-curtain-l { left: calc(50% - 180px); transform: rotate(-2deg); }
+.room-curtain-r { right: calc(50% - 180px); transform: rotate(2deg); }
+
+/* 掲示板 (左側) */
+.room-board {
+  position: absolute;
+  top: 18%;
+  left: 5%;
+  width: 100px;
+  height: 140px;
+  background: #C19A6B; /* コルク色 */
+  border: 6px solid #8D6E63;
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 写真/絵 (左上) */
+.room-photos {
+  position: absolute;
+  top: 8%;
+  left: 15%;
+  width: 60px;
+  height: 50px;
+  background: var(--bg-paper);
+  border: 4px solid #5D4037;
+  transform: rotate(5deg);
+}
+
+/* 本棚 (右側) */
+.room-shelf {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 120px;
+  height: 250px;
+  background: #A1887F;
+  border: 4px solid #5D4037;
+  border-radius: 4px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+.room-shelf::before {
+  content: '';
+  position: absolute;
+  top: 40px; left: 0; right: 0; height: 4px; background: #5D4037;
+  box-shadow: 0 60px #5D4037, 0 120px #5D4037, 0 180px #5D4037;
 }
 
 /* 床面代わりのエリア */
@@ -218,32 +313,33 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40vh;
-  background: #E8D5C0;
+  height: 35vh;
+  background: #D2B48C; /* 濃いめの床色 */
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  box-shadow: 0 -10px 30px rgba(93, 64, 55, 0.1);
+  box-shadow: 0 -20px 40px rgba(0,0,0,0.1);
+  z-index: 2;
 }
 
-/* テーブル（大幅に拡大） */
+/* テーブル（大幅に拡大・画像再現） */
 .room-table {
   position: relative;
-  width: 450px;
-  height: 200px;
-  margin-top: -60px;
+  width: 600px; /* さらに拡大 */
+  height: 240px;
+  margin-top: -80px;
 }
 .table-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 15px 15px rgba(93, 64, 55, 0.25));
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
 }
 
 .table-surface {
   position: absolute;
-  top: 100px; /* SVGのパスに合わせて調整 */
-  left: 30px;
-  right: 30px;
+  top: 100px;
+  left: 40px;
+  right: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
