@@ -19,9 +19,18 @@
   <!-- ===== ホーム / 自室画面 ===== -->
   <div id="screen-home" class="screen active">
     <div class="home-room" id="home-room">
-      <!-- 背景画像はCSSで設定 -->
-      <div class="table-surface" id="room-table-surface">
-        <!-- グッズがここに並ぶ -->
+      <div class="room-window"></div>
+      <div class="room-floor-area">
+        <div class="room-table" id="room-table">
+          <svg viewBox="0 0 400 120" class="table-svg">
+            <!-- シンプルな大型テーブル -->
+            <path d="M10,60 L390,60 L400,80 L0,80 Z" fill="#F1F8E9" stroke="#81C784" stroke-width="2"/>
+            <path d="M40,80 L35,110 M360,80 L365,110" stroke="#81C784" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="table-surface" id="room-table-surface">
+            <!-- グッズがここに並ぶ -->
+          </div>
+        </div>
       </div>
     </div>
 
