@@ -220,53 +220,51 @@ const MEDALS: Medal[] = [
 // =========================================================
 const RELAX_GOODS: RelaxGood[] = [
   { id: 'coffee', price: 20,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M32,45 Q50,42 68,45 L65,85 Q50,90 35,85 Z" fill="#F1F8E9" stroke="#81C784" stroke-width="1.5"/>
-    <path d="M68,50 Q80,50 80,62 Q80,74 66,74" fill="none" stroke="#81C784" stroke-width="3" stroke-linecap="round"/>
-    <ellipse cx="50" cy="46" rx="16" ry="4" fill="#388E3C" opacity="0.3"/>
-    <path d="M40,35 Q45,20 50,35 M55,30 Q60,15 65,30" fill="none" stroke="#A5D6A7" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-  </svg>`,  name: 'ホットコーヒー',       desc: 'ほんのり温かい一杯',      style: 'left: 10%; bottom: 10px; transform: scale(1.1);' },
+    <path d="M30,40 L70,40 Q75,40 75,45 L70,85 Q68,95 50,95 Q32,95 30,85 L25,45 Q25,40 30,40 Z" fill="#FFF8E1" stroke="#FFB74D" stroke-width="2"/>
+    <path d="M72,45 Q85,45 85,60 Q85,75 70,75" fill="none" stroke="#FFB74D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M35,30 Q40,15 45,30 M50,25 Q55,10 60,25 M65,30 Q70,15 75,30" fill="none" stroke="#FFE0B2" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="50" cy="40" rx="20" ry="5" fill="#E65100" opacity="0.4"/>
+  </svg>`,  name: 'ホットコーヒー',       desc: 'ほんのり温かい一杯',      style: 'left: 10%; bottom: 20px; transform: scale(1.1);' },
   { id: 'candle', price: 30,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="38" y="50" width="24" height="40" rx="3" fill="#FFF" stroke="#C8E6C9" stroke-width="1.5"/>
-    <path d="M50,30 Q45,15 50,5 Q55,15 50,30" fill="#C8E6C9" opacity="0.8">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    <rect x="35" y="45" width="30" height="45" rx="5" fill="#FFFDE7" stroke="#FFB74D" stroke-width="2"/>
+    <path d="M50,45 V40" stroke="#E65100" stroke-width="2"/>
+    <path d="M50,40 Q45,25 50,10 Q55,25 50,40" fill="#FFB74D">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
     </path>
-    <circle cx="50" cy="20" r="15" fill="#E8F5E9" opacity="0.4"/>
-  </svg>`, name: 'アロマキャンドル',     desc: 'やわらかな香りが広がる',  style: 'left: 22%; bottom: 12px;' },
+  </svg>`, name: 'アロマキャンドル',     desc: 'やわらかな香りが広がる',  style: 'left: 22%; bottom: 25px;' },
   { id: 'cushion', price: 50,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15,50 Q15,25 50,25 Q85,25 85,50 L82,75 Q50,85 18,75 Z" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="2"/>
-    <path d="M30,50 Q50,45 70,50 M30,65 Q50,60 70,65" fill="none" stroke="#C8E6C9" stroke-width="1.5" opacity="0.5"/>
-  </svg>`, name: 'ふかふかクッション',   desc: 'もふもふで心地よい',      style: 'left: 35%; bottom: 4px; transform: scale(1.3);' },
+    <path d="M15,40 Q15,20 50,20 Q85,20 85,40 L85,60 Q85,80 50,80 Q15,80 15,60 Z" fill="#FFE0B2" stroke="#FFB74D" stroke-width="3"/>
+    <path d="M25,40 Q50,35 75,40 M25,60 Q50,55 75,60" fill="none" stroke="#FFCC80" stroke-width="2" opacity="0.6"/>
+  </svg>`, name: 'ふかふかクッション',   desc: 'もふもふで心地よい',      style: 'left: 36%; bottom: 10px; transform: scale(1.3);' },
   { id: 'plant', price: 75,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M38,75 L62,75 L58,95 L42,95 Z" fill="#C8E6C9" stroke="#81C784" stroke-width="1.5"/>
-    <path d="M50,75 V45 M35,60 Q25,45 35,35 M65,60 Q75,45 65,35" fill="none" stroke="#66BB6A" stroke-width="3.5" stroke-linecap="round"/>
-    <circle cx="35" cy="35" r="8" fill="#A5D6A7"/><circle cx="65" cy="35" r="8" fill="#A5D6A7"/><circle cx="50" cy="40" r="10" fill="#81C784"/>
-  </svg>`,  name: 'ちいさな観葉植物',    desc: '緑が癒しをくれる',        style: 'left: 55%; bottom: 8px; transform: scale(1.1);' },
+    <path d="M35,75 L65,75 L60,95 L40,95 Z" fill="#FFCC80" stroke="#E65100" stroke-width="2"/>
+    <path d="M50,75 V45 M50,65 Q30,50 25,60 M50,60 Q70,45 75,55" fill="none" stroke="#FFB74D" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="25" cy="55" r="8" fill="#FFB74D" opacity="0.8"/><circle cx="75" cy="50" r="10" fill="#FFB74D" opacity="0.7"/><circle cx="50" cy="35" r="12" fill="#FFB74D"/>
+  </svg>`,  name: 'ちいさな観葉植物',    desc: '緑が癒しをくれる',        style: 'left: 55%; bottom: 15px; transform: scale(1.1);' },
   { id: 'book', price: 100,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M25,35 L50,40 L50,95 L25,90 Z" fill="#F1F8E9" stroke="#81C784" stroke-width="1.5"/>
-    <path d="M75,35 L50,40 L50,95 L75,90 Z" fill="#FFF" stroke="#81C784" stroke-width="1.5"/>
-    <path d="M30,50 H45 M30,60 H45 M55,50 H70 M55,60 H70" stroke="#C8E6C9" stroke-width="1.5"/>
-  </svg>`,  name: 'お気に入りの本',       desc: '読むたびほっとする',      style: 'left: 72%; bottom: 12px; transform: rotate(-5deg);' },
+    <path d="M20,30 L50,35 L50,90 L20,85 Z" fill="#FFE0B2" stroke="#E65100" stroke-width="2"/>
+    <path d="M80,30 L50,35 L50,90 L80,85 Z" fill="#FFF8E1" stroke="#E65100" stroke-width="2"/>
+    <path d="M25,45 H45 M25,55 H45 M55,45 H75 M55,55 H75" fill="none" stroke="#FFB74D" stroke-width="1.5"/>
+  </svg>`,  name: 'お気に入りの本',       desc: '読むたびほっとする',      style: 'left: 72%; bottom: 20px; transform: rotate(-8deg);' },
   { id: 'record', price: 150,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="15" y="55" width="70" height="40" rx="3" fill="#A5D6A7" stroke="#4CAF50" stroke-width="1.5"/>
-    <circle cx="50" cy="55" r="30" fill="#E8F5E9" stroke="#81C784" stroke-width="2"/>
-    <circle cx="50" cy="55" r="6" fill="#81C784"/>
-    <path d="M75,40 L60,55" stroke="#4CAF50" stroke-width="3" stroke-linecap="round"/>
-  </svg>`,  name: 'レコードプレイヤー',  desc: 'のんびりした音楽',        style: 'left: -5%; bottom: 12px; transform: scale(1.1);' },
+    <rect x="15" y="45" width="70" height="50" rx="5" fill="#FFCC80" stroke="#E65100" stroke-width="2"/>
+    <circle cx="50" cy="50" r="35" fill="#FFB74D" stroke="#E65100" stroke-width="2" opacity="0.6"/>
+    <circle cx="50" cy="50" r="8" fill="#FFF"/>
+  </svg>`,  name: 'レコードプレイヤー',  desc: 'のんびりした音楽',        style: 'left: -2%; bottom: 15px; transform: scale(1.1);' },
   { id: 'moon', price: 200,  icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="38" fill="#FFF9C4" stroke="#FFF176" stroke-width="1" opacity="0.8"/>
-    <circle cx="40" cy="40" r="4" fill="#FDD835" opacity="0.3"/>
-  </svg>`,         name: 'ムーンランプ',         desc: '夜を照らすやさしい光',    style: 'left: 88%; bottom: 12px;' },
+    <circle cx="50" cy="50" r="40" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1"/>
+    <circle cx="35" cy="40" r="5" fill="#FDD835" opacity="0.4"/>
+  </svg>`,         name: 'ムーンランプ',         desc: '夜を照らすやさしい光',    style: 'left: 88%; bottom: 25px;' },
   { id: 'bear', price: 250, icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="45" r="18" fill="#F1F8E9" stroke="#81C784" stroke-width="1.5"/>
-    <circle cx="50" cy="75" r="22" fill="#F1F8E9" stroke="#81C784" stroke-width="1.5"/>
-    <circle cx="35" cy="35" r="8" fill="#F1F8E9" stroke="#81C784" stroke-width="1.5"/><circle cx="65" cy="35" r="8" fill="#F1F8E9" stroke="#81C784" stroke-width="1.5"/>
-    <circle cx="44" cy="42" r="2" fill="#2E7D32"/><circle cx="56" cy="42" r="2" fill="#2E7D32"/>
-    <path d="M46,52 Q50,55 54,52" fill="none" stroke="#81C784" stroke-width="1.5" stroke-linecap="round"/>
-  </svg>`,    name: 'くまのぬいぐるみ',    desc: 'そっと抱きしめよう',      style: 'left: 45%; bottom: 4px; transform: scale(1.4); z-index: 2;' },
+    <circle cx="50" cy="45" r="18" fill="#FFE082" stroke="#E65100" stroke-width="1.5"/>
+    <circle cx="50" cy="75" r="22" fill="#FFE082" stroke="#E65100" stroke-width="1.5"/>
+    <circle cx="35" cy="35" r="8" fill="#FFE082" stroke="#E65100" stroke-width="1.5"/><circle cx="65" cy="35" r="8" fill="#FFE082" stroke="#E65100" stroke-width="1.5"/>
+    <circle cx="44" cy="42" r="2" fill="#E65100"/><circle cx="56" cy="42" r="2" fill="#E65100"/>
+  </svg>`,    name: 'くまのぬいぐるみ',    desc: 'そっと抱きしめよう',      style: 'left: 48%; bottom: 5px; transform: scale(1.4); z-index: 2;' },
   { id: 'bath', price: 300, icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15,60 Q15,90 50,90 Q85,90 85,60 L85,50 H15 Z" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.5"/>
-    <circle cx="30" cy="45" r="7" fill="#FFF" opacity="0.6"/><circle cx="50" cy="40" r="10" fill="#FFF" opacity="0.5"/><circle cx="70" cy="45" r="8" fill="#FFF" opacity="0.7"/>
-  </svg>`,           desc: 'ゆっくりお風呂でリラックス', style: 'left: 20%; bottom: 0px; transform: scale(1.2); opacity: 0.8;', name: 'バブルバス' },
+    <path d="M15,60 Q15,90 50,90 Q85,90 85,60 L85,50 H15 Z" fill="#FFECB3" stroke="#FFB74D" stroke-width="1.5"/>
+    <circle cx="30" cy="45" r="7" fill="#FFF" opacity="0.8"/><circle cx="50" cy="40" r="10" fill="#FFF" opacity="0.7"/>
+  </svg>`,           desc: 'ゆっくりお風呂でリラックス', style: 'left: 20%; bottom: 0px; transform: scale(1.2);', name: 'バブルバス' },
 ];
 
 

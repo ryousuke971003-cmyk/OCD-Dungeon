@@ -7,14 +7,14 @@
 
 :root {
   /* 新しいカラーパレット：暖かみのある水彩画風 */
-  --bg-sand:      #F1F8E9; /* ミントホワイト（背景ベース） */
-  --bg-room:      #E8F5E9; /* 部屋全体のトーン（薄い緑） */
-  --bg-paper:     #FFFFFF; /* カード・紙の質感（純白） */
-  --border-sepia: #A5D6A7; /* 境界線（ソフトグリーン） */
-  --text-main:    #2E7D32; /* メインテキスト（深い緑） */
-  --text-soft:    #66BB6A; /* サブテキスト */
-  --wood-dark:    #81C784;
-  --wood-light:   #C8E6C9;
+  --bg-sand:      #FFF8E1; /* ライトオレンジベージュ */
+  --bg-room:      #FFF3E0; /* 部屋全体のトーン */
+  --bg-paper:     #FFFFFF; /* カード・紙の質感 */
+  --border-sepia: #FFB74D; /* 境界線（オレンジ） */
+  --text-main:    #E65100; /* メインテキスト（深いオレンジ） */
+  --text-soft:    #FB8C00; /* サブテキスト */
+  --wood-dark:    #EF6C00;
+  --wood-light:   #FFB74D;
   --curtain-bg:   #F8B195;
   
   --color-jirorin:  #B2D8FF; /* 確認族 */
@@ -204,72 +204,28 @@ html, body {
   padding: 0;
 }
 
-/* 部屋の背景 */
+/* シンプルな背景 */
 .home-room {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #E8F5E9, #C8E6C9);
+  background: linear-gradient(to bottom, #FFF3E0, #FFE0B2);
   overflow: hidden;
 }
 
-/* 窓 (シンプル版) */
-.room-window {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 140px;
-  background: white;
-  border: 6px solid #A5D6A7;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  opacity: 0.9;
-}
-.room-window::after {
-  content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: rgba(165, 214, 167, 0.4); transform: translateX(-50%);
-}
-
-/* 床面代わりのエリア */
-.room-floor-area {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30vh;
-  background: #DCEDC8;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
-  z-index: 2;
-}
-
-/* テーブル（ミニマルデザイン） */
-.room-table {
-  position: relative;
-  width: 480px;
-  height: 160px;
-  margin-top: -40px;
-}
-.table-svg {
-  width: 100%;
-  height: 100%;
-}
-
+/* グッズ配置エリア */
 .table-surface {
   position: absolute;
-  top: 60px;
-  left: 30px;
-  right: 30px;
-  height: 30px;
+  bottom: 50px;
+  left: 5%;
+  right: 5%;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   pointer-events: none;
-  z-index: 3;
+  z-index: 10;
 }
 
 /* アイテム共通スタイル */
