@@ -200,48 +200,101 @@ html, body {
   padding: 0;
 }
 
-/* 部屋の背景（水彩画風のグラデーションとオーガニックな形状） */
+/* 部屋の背景（壁と床） */
 .home-room {
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(circle at 10% 10%, #FFF9C4 0%, transparent 40%),
-    radial-gradient(circle at 90% 10%, #BBDEFB 0%, transparent 40%),
-    #FDF6E9;
+  display: flex;
+  flex-direction: column;
+  background: #FDF6E9;
   overflow: hidden;
 }
-.home-room::before {
-  content: '';
-  position: absolute;
-  inset: 0;
+
+/* 壁面 */
+.room-wall {
+  flex: 1.2;
   background: 
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-  opacity: 0.3;
-  pointer-events: none;
-}
-/* 床（手描き風のゆるい曲線） */
-.home-room::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: -10%; right: -10%;
-  height: 120px;
-  background: #E8D5C0;
-  border-radius: 50% 50% 0 0 / 30px 30px 0 0;
-  box-shadow: inset 0 20px 20px rgba(93, 64, 55, 0.05);
+    radial-gradient(circle at 50% 100%, #FFF9C4 0%, transparent 70%),
+    #FDF6E9;
+  border-bottom: 4px solid #E8D5C0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 80px 20px 20px;
+  gap: 15px;
+  justify-content: center;
 }
 
-.home-furniture-item {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  animation: floatIn 0.5s ease-out both;
-  cursor: default;
-  user-select: none;
+/* 床面 */
+.room-floor-area {
+  flex: 1;
+  background: #E8D5C0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-.home-furniture-item svg {
+
+/* テーブル */
+.room-table {
+  position: relative;
+  width: 280px;
+  height: 120px;
+  margin-top: -20px;
+}
+.table-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 10px rgba(93, 64, 55, 0.2));
+}
+
+.table-surface {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  right: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+/* アイテム共通スタイル */
+.room-item {
+  width: 50px;
+  height: 50px;
+  animation: floatIn 0.5s ease-out both;
+  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.1));
+  transition: transform 0.2s;
+}
+.room-item:hover {
+  transform: scale(1.1);
+}
+.room-item svg {
   width: 100%;
   height: 100%;
 }
+
+/* 壁に掛けるメダル */
+.medal-on-wall {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  padding: 8px;
+  border: 1px solid rgba(210, 180, 140, 0.5);
+}
+
+/* テーブルに置くグッズ */
+.good-on-table {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform-origin: bottom center;
+}
+
 @keyframes floatIn {
   from { opacity: 0; transform: scale(0) rotate(-10deg); }
   to   { opacity: 1; transform: scale(1) rotate(0deg); }
