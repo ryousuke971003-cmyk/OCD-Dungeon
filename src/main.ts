@@ -362,26 +362,8 @@ function renderHome(): void {
   getEl('total-wins').textContent = String(saveData.totalWins);
   getEl('total-medals').textContent = String(saveData.medals.length);
   getEl('streak-count').textContent = String(saveData.streak);
-
-  // 部屋のメダルとグッズを配置
-  renderRoomItems();
 }
 
-function renderRoomItems(): void {
-  // テーブルにグッズを配置（メダルの描画は削除）
-  const table = getEl('room-table-surface');
-  table.innerHTML = '';
-  const unlockedGoods = RELAX_GOODS.filter(g => saveData.unlockedGoods.includes(g.id));
-  unlockedGoods.forEach((g, i) => {
-    const el = document.createElement('div');
-    el.className = 'room-item good-on-table';
-    el.innerHTML = g.icon;
-    el.title = g.name;
-    el.style.cssText += g.style;
-    el.style.animationDelay = `${i * 0.08}s`;
-    table.appendChild(el);
-  });
-}
 
 // =========================================================
 //  敵選択画面 レンダリング
