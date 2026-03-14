@@ -247,7 +247,7 @@ html, body {
   gap: 16px;
 }
 
-/* レベルバー（紙の付箋風） */
+/* コイン表示（紙の付箋風） */
 .player-info {
   width: 100%;
   max-width: 400px;
@@ -258,33 +258,28 @@ html, body {
   box-shadow: 2px 2px 0 var(--border-sepia), var(--shadow-soft);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   transform: rotate(-0.5deg);
 }
-.level-badge {
-  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-  color: #fff;
+.coin-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coin-icon svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+.coin-text {
+  font-size: 1.5rem;
   font-weight: 800;
-  font-size: 1rem;
-  padding: 6px 12px;
-  border-radius: 50px;
+  color: var(--orange-dark);
   white-space: nowrap;
 }
-.xp-bar-wrap {
-  flex: 1;
-  height: 10px;
-  background: var(--orange-light);
-  border-radius: 5px;
-  overflow: hidden;
-}
-.xp-bar {
-  height: 100%;
-  width: 0%;
-  background: #FFB74D;
-  border-radius: 5px;
-  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.xp-text { font-size: 0.75rem; color: var(--text-sub); white-space: nowrap; }
 
 /* タイトルバナー */
 .title-banner {
@@ -825,26 +820,7 @@ html, body {
 }
 .medal-text { font-size: 0.9rem; font-weight: 700; margin-top: 4px; color: #3D2B1F; }
 
-/* 新グッズポップアップ */
-.new-goods-popup {
-  background: linear-gradient(135deg, var(--purple-light), var(--blue-light));
-  border-radius: var(--radius);
-  padding: 16px 24px;
-  text-align: center;
-  color: var(--text);
-  animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both;
-}
-.goods-icon { 
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
-}
-.goods-icon svg {
-  width: 100%;
-  height: 100%;
-}
-.goods-text { font-size: 0.85rem; color: var(--text-sub); }
-.goods-name { font-size: 1.1rem; font-weight: 800; color: var(--purple); margin-top: 4px; }
+
 
 /* ===== メダル図鑑 ===== */
 .medals-grid {
@@ -907,7 +883,26 @@ html, body {
 }
 .goods-card-name { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-top: 8px; }
 .goods-card-unlock { font-size: 0.78rem; color: var(--text-sub); margin-top: 4px; }
-
+.goods-card-action { margin-top: 12px; }
+.goods-owned { 
+  font-size: 0.9rem; 
+  font-weight: 700; 
+  color: var(--orange-main); 
+  padding: 8px; 
+  background: rgba(255,140,66,0.1); 
+  border-radius: 8px; 
+}
+.goods-card-action .btn {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+.goods-card-action .btn[disabled] {
+  background: #ccc;
+  border-bottom: 4px solid #aaa;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
 /* ===== モーダル ===== */
 .modal-overlay {
   position: fixed;
@@ -940,38 +935,7 @@ html, body {
 
 .retreat-icon { font-size: 3rem; }
 
-/* レベルアップモーダル */
-.levelup-modal {
-  background: linear-gradient(135deg, #FFF8F0, #FFE8D6);
-  border: 3px solid var(--orange-mid);
-}
-.levelup-burst {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--yellow) 0%, var(--orange) 60%, transparent 70%);
-  margin: 0 auto;
-  animation: burst-pulse 1s ease-in-out infinite;
-}
-@keyframes burst-pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,64,0.4); }
-  50%       { transform: scale(1.1); box-shadow: 0 0 40px rgba(255,215,64,0.8); }
-}
-.levelup-stars { font-size: 1.5rem; letter-spacing: 4px; }
-.levelup-modal h2 { font-size: 2rem; font-weight: 800; color: var(--orange-dark); }
-.levelup-level { font-size: 3rem; font-weight: 800; color: var(--orange); }
-.levelup-goods { background: rgba(255,255,255,0.6); border-radius: var(--radius-sm); padding: 16px; }
-.levelup-goods-icon { 
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
-}
-.levelup-goods-icon svg {
-  width: 100%;
-  height: 100%;
-}
-.levelup-goods-name { font-size: 1.2rem; font-weight: 800; color: var(--text); margin: 6px 0 2px; }
-.levelup-goods-desc { font-size: 0.85rem; color: var(--text-sub); }
+
 
 /* ===== スクロール ===== */
 .screen { overflow-y: auto; }
