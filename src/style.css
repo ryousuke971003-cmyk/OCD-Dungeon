@@ -30,6 +30,19 @@
   
   /* 手書き風のわずかな揺らぎを再現するための定数 */
   --rough-border: 2px solid var(--border-sepia);
+
+  /* 色・影の追加定義（既存の watercolor パレットに合わせる） */
+  --card-bg:      var(--bg-paper);
+  --shadow:       var(--shadow-soft);
+  --text:         var(--text-main);
+  --text-sub:     var(--text-soft);
+  --orange:       var(--orange-main);
+  --orange-light: #FFF3E0;
+  --orange-mid:   #FFB74D;
+  --green:        #81C784;
+  --blue:         #64B5F6;
+  --purple:       #BA68C8;
+  --yellow:       #FFD740;
 }
 
 html, body {
@@ -372,6 +385,7 @@ html, body {
   opacity: 0;
   transition: opacity 0.2s;
   border-radius: inherit;
+  z-index: -1;
 }
 .enemy-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--shadow); }
 .enemy-card:hover::before { opacity: 1; }
