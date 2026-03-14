@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
     rel="stylesheet" />
-  <script type="module" crossorigin src="/assets/index-XYPlWgRq.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DiBD6jlF.css">
+  <script type="module" crossorigin src="/assets/index-Dy9EZCFu.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BraHFvOw.css">
 </head>
 
 <body>
@@ -179,10 +179,18 @@
     </div>
 
     <!-- 敵キャラクター -->
-    <div class="enemy-display" id="enemy-display">
+    <div class="enemy-display" id="enemy-display" onclick="handleBattleTap(event)">
       <div class="enemy-aura" id="enemy-aura"></div>
       <div class="enemy-sprite" id="enemy-sprite"></div>
       <div class="enemy-speech-bubble" id="enemy-speech-bubble"></div>
+    </div>
+
+    <!-- 連打ボタン -->
+    <div class="tap-action-area">
+      <button class="btn-tap" id="btn-tap" onclick="handleBattleTap(event)">
+        <span class="tap-icon">💥</span>
+        <span class="tap-text">ここを連打！</span>
+      </button>
     </div>
 
     <!-- エネルギーチャージゲージ -->
