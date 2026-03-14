@@ -152,19 +152,19 @@
       <button class="difficulty-card difficulty-easy" onclick="startBattle('easy')" id="diff-easy">
         <div class="diff-icon">🌱</div>
         <div class="diff-name">よわい</div>
-        <div class="diff-time">30秒</div>
+        <div class="diff-time">30チャージ</div>
         <div class="diff-desc">ちょっとだけ試してみる</div>
       </button>
       <button class="difficulty-card difficulty-normal" onclick="startBattle('normal')" id="diff-normal">
         <div class="diff-icon">⚡</div>
         <div class="diff-name">ふつう</div>
-        <div class="diff-time">90秒</div>
+        <div class="diff-time">100チャージ</div>
         <div class="diff-desc">いつもどおりに挑戦</div>
       </button>
       <button class="difficulty-card difficulty-hard" onclick="startBattle('hard')" id="diff-hard">
         <div class="diff-icon">🔥</div>
         <div class="diff-name">つよい</div>
-        <div class="diff-time">180秒</div>
+        <div class="diff-time">250チャージ</div>
         <div class="diff-desc">本気で立ち向かう</div>
       </button>
     </div>
@@ -187,31 +187,20 @@
     <!-- 連打ボタン -->
     <div class="tap-action-area">
       <button class="btn-tap" id="btn-tap" onclick="handleBattleTap(event)">
-        <span class="tap-icon">💥</span>
-        <span class="tap-text">ここを連打！</span>
+        <span class="tap-icon">✨</span>
+        <span class="tap-text">エネルギーを放つ！</span>
       </button>
     </div>
 
-    <!-- エネルギーチャージゲージ -->
+    <!-- 心の平穏チャージゲージ -->
     <div class="charge-section">
-      <div class="charge-label">⚡ エネルギーチャージ</div>
+      <div class="charge-label">✨ 心の平穏チャージ</div>
       <div class="charge-bar-wrap">
         <div class="charge-bar" id="charge-bar">
           <div class="charge-glow"></div>
         </div>
       </div>
       <div class="charge-percent" id="charge-percent">0%</div>
-    </div>
-
-    <!-- タイマー -->
-    <div class="timer-display">
-      <div class="timer-circle" id="timer-circle">
-        <svg class="timer-svg" viewBox="0 0 100 100">
-          <circle class="timer-bg" cx="50" cy="50" r="45" />
-          <circle class="timer-progress" id="timer-progress" cx="50" cy="50" r="45" />
-        </svg>
-        <div class="timer-text" id="timer-text">--</div>
-      </div>
     </div>
 
     <!-- キャンセルボタン -->

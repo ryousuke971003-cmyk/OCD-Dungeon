@@ -735,19 +735,29 @@ html, body {
   font-variant-numeric: tabular-nums;
 }
 
-/* タップエフェクト (パーティクル) */
+/* タップエフェクト (パーティクル - 中心に向かって飛ぶ) */
 .tap-particle {
   position: absolute;
   pointer-events: none;
   font-size: 1.5rem;
   transform: translate(-50%, -50%);
   z-index: 100;
-  animation: tap-pop 0.6s ease-out forwards;
+  animation: tap-to-center 0.6s cubic-bezier(0.2, 0, 0.2, 1) forwards;
 }
-@keyframes tap-pop {
-  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
-  50% { transform: translate(-50%, -80%) scale(1.2); opacity: 1; }
-  100% { transform: translate(-50%, -120%) scale(0.8); opacity: 0; }
+@keyframes tap-to-center {
+  0% { 
+    transform: translate(-50%, -50%) scale(1.5); 
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% { 
+    /* 画面中央（敵の位置）付近へ移動 */
+    left: 50% !important;
+    top: 40% !important; /* enemy-display の位置付近 */
+    transform: translate(-50%, -50%) scale(0.2); 
+    opacity: 0;
+    filter: blur(4px);
+  }
 }
 
 /* ===== 勝利画面 ===== */

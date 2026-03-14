@@ -24,7 +24,7 @@ interface Enemy {
 /** 難易度設定 */
 interface Difficulty {
   label: string;
-  seconds: number;
+  hp: number;
   coins: number;
 }
 
@@ -67,8 +67,8 @@ interface GameState {
   selectedDifficulty: 'easy' | 'normal' | 'hard' | null;
   timerInterval: ReturnType<typeof setInterval> | null;
   speechInterval: ReturnType<typeof setInterval> | null;
-  timerRemaining: number;
-  timerMax: number;
+  chargeRemaining: number;
+  chargeMax: number;
 }
 
 // =========================================================
@@ -196,9 +196,9 @@ const ENEMIES: Enemy[] = [
 //  難易度設定（タイマー秒数・獲得XP）
 // =========================================================
 const DIFFICULTIES: Record<string, Difficulty> = {
-  easy:   { label: 'よわい',   seconds: 30,  coins: 5 },
-  normal: { label: 'ふつう', seconds: 90,  coins: 15 },
-  hard:   { label: 'つよい',   seconds: 180, coins: 30 },
+  easy:   { label: 'よわい',   hp: 30,  coins: 5 },
+  normal: { label: 'ふつう', hp: 100,  coins: 15 },
+  hard:   { label: 'つよい',   hp: 250, coins: 30 },
 };
 
 // =========================================================
@@ -241,8 +241,8 @@ let state: GameState = {
   selectedDifficulty: null,
   timerInterval: null,
   speechInterval: null,
-  timerRemaining: 0,
-  timerMax: 0,
+  chargeRemaining: 0,
+  chargeMax: 0,
 };
 
 // =========================================================
@@ -448,12 +448,13 @@ function renderDifficultyScreen(): void {
 function startBattle(difficulty: string): void {
   state.selectedDifficulty = difficulty as 'easy' | 'normal' | 'hard';
   const diffConf = DIFFICULTIES[difficulty];
-  state.timerMax = diffConf.seconds;
-  state.timerRemaining = diffConf.seconds;
+  state.chargeMax = diffConf.hp;
+  state.chargeRemaining = diffConf.hp;
 
   showScreen('screen-battle');
   setupBattleScreen();
-  startTimer();
+  // タイマーは制限時間ではなくなったが、一応画面管理などのために呼び出す（または実質何もしないようにする）
+  // 今回は「制限時間廃止」なのでカウントダウンは行わない
 }
 
 function setupBattleScreen(): void {
@@ -483,7 +484,7 @@ function setupBattleScreen(): void {
 
   // チャージ・タイマーリセット
   updateChargeBar(0);
-  updateTimerDisplay(state.timerMax, state.timerMax);
+  // updateTimerDisplay(state.timerMax, state.timerMax); // 廃止
 
   // タップ（クリック）イベントの登録（重複防止のため一度削除してから追加）
   const enemyDisplay = getEl('enemy-display');
@@ -495,16 +496,15 @@ function setupBattleScreen(): void {
 //  連打（タップ）処理
 // =========================================================
 function handleBattleTap(e: MouseEvent): void {
-  if (state.timerRemaining <= 0 || state.currentScreen !== 'screen-battle') return;
+  if (state.chargeRemaining <= 0 || state.currentScreen !== 'screen-battle') return;
 
-  // 1タップにつき1秒減少（難易度や好みで調整可能）
+  // 1タップにつき1チャージ減少
   const tapPower = 1;
-  state.timerRemaining = Math.max(0, state.timerRemaining - tapPower);
+  state.chargeRemaining = Math.max(0, state.chargeRemaining - tapPower);
 
   // 即座にUI更新
-  const progress = 1 - state.timerRemaining / state.timerMax;
+  const progress = 1 - state.chargeRemaining / state.chargeMax;
   updateChargeBar(progress);
-  updateTimerDisplay(state.timerRemaining, state.timerMax);
 
   // 敵が揺れるエフェクト
   const sprite = getEl('enemy-sprite');
@@ -512,11 +512,11 @@ function handleBattleTap(e: MouseEvent): void {
   void sprite.offsetWidth; // リフロー強制でアニメーション再トリガー
   sprite.classList.add('enemy-shake');
 
-  // パーティクル（星や光）をタップ位置に表示
+  // パーティクル（星や光）を中心（敵）に向かって表示
   createTapParticle(e.clientX, e.clientY);
 
   // ゲージMAXになったら撃破
-  if (state.timerRemaining <= 0) {
+  if (state.chargeRemaining <= 0) {
     if (state.timerInterval !== null) clearInterval(state.timerInterval);
     if (state.speechInterval !== null) clearInterval(state.speechInterval);
     triggerVictory();
@@ -526,7 +526,8 @@ function handleBattleTap(e: MouseEvent): void {
 function createTapParticle(x: number, y: number): void {
   const p = document.createElement('div');
   p.className = 'tap-particle';
-  p.textContent = '✨'; // 好きな絵文字やSVG
+  const particles = ['✨', '⭐', '🌟', '🔆', '💠'];
+  p.textContent = particles[Math.floor(Math.random() * particles.length)];
   p.style.left = `${x}px`;
   p.style.top = `${y}px`;
   document.body.appendChild(p);
@@ -540,53 +541,14 @@ function createTapParticle(x: number, y: number): void {
 // =========================================================
 //  タイマー
 // =========================================================
-function startTimer(): void {
-  if (state.timerInterval !== null) clearInterval(state.timerInterval);
-  state.timerInterval = setInterval(() => {
-    // セーフガード：戦闘画面以外でタイマーが動いていたら自害する（HMR等のゴースト対策）
-    if (state.currentScreen !== 'screen-battle') {
-      if (state.timerInterval !== null) clearInterval(state.timerInterval);
-      return;
-    }
 
-    state.timerRemaining--;
-    const progress = 1 - state.timerRemaining / state.timerMax;
-    updateChargeBar(progress);
-    updateTimerDisplay(state.timerRemaining, state.timerMax);
-
-    // 敵が弱ってくるエフェクト（50%以上で敵を揺らす）
-    if (progress >= 0.5 && progress <= 0.52) {
-      const sprite = getEl('enemy-sprite');
-      sprite.classList.add('enemy-shake');
-      setTimeout(() => sprite.classList.remove('enemy-shake'), 500);
-    }
-
-    if (state.timerRemaining <= 0) {
-      if (state.timerInterval !== null) clearInterval(state.timerInterval);
-      if (state.speechInterval !== null) clearInterval(state.speechInterval);
-      triggerVictory();
-    }
-  }, 1000);
-}
-
+// =========================================================
+//  チャージゲージ更新
+// =========================================================
 function updateChargeBar(ratio: number): void {
   const pct = Math.round(ratio * 100);
   (getEl('charge-bar') as HTMLElement).style.width = pct + '%';
   getEl('charge-percent').textContent = pct + '%';
-}
-
-function updateTimerDisplay(remaining: number, max: number): void {
-  getEl('timer-text').textContent = String(remaining);
-  const circumference = 2 * Math.PI * 45; // 約283
-  const offset = circumference * (1 - remaining / max);
-  (getEl('timer-progress') as SVGCircleElement & HTMLElement).style.strokeDashoffset = String(offset);
-
-  // タイマーの色：残り少ないほど赤みが増す
-  const ratio = remaining / max;
-  const r = Math.round(90 + (1 - ratio) * 165);
-  const g = Math.round(140 - (1 - ratio) * 100);
-  const b = Math.round(255 - (1 - ratio) * 255);
-  (getEl('timer-progress') as SVGCircleElement & HTMLElement).style.stroke = `rgb(${r},${g},${b})`;
 }
 
 // =========================================================
@@ -611,10 +573,7 @@ function confirmRetreat(): void {
 
 function closeRetreatModal(): void {
   getEl('retreat-modal').style.display = 'none';
-  // 戻らず戦闘再開する（キャンセル）場合のみタイマー再開
-  if (state.timerRemaining > 0 && state.currentScreen === 'screen-battle') {
-    startTimer();
-  }
+  // タイマー廃止のため再開処理不要
 }
 
 // =========================================================
