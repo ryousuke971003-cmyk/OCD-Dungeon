@@ -535,6 +535,12 @@ function createTapParticle(x: number, y: number): void {
 function startTimer(): void {
   if (state.timerInterval !== null) clearInterval(state.timerInterval);
   state.timerInterval = setInterval(() => {
+    // セーフガード：戦闘画面以外でタイマーが動いていたら自害する（HMR等のゴースト対策）
+    if (state.currentScreen !== 'screen-battle') {
+      if (state.timerInterval !== null) clearInterval(state.timerInterval);
+      return;
+    }
+
     state.timerRemaining--;
     const progress = 1 - state.timerRemaining / state.timerMax;
     updateChargeBar(progress);
