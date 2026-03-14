@@ -476,6 +476,57 @@ function setupBattleScreen(): void {
   // チャージ・タイマーリセット
   updateChargeBar(0);
   updateTimerDisplay(state.timerMax, state.timerMax);
+
+  // タップ（クリック）イベントの登録（重複防止のため一度削除してから追加）
+  const enemyDisplay = getEl('enemy-display');
+  enemyDisplay.removeEventListener('click', handleBattleTap);
+  enemyDisplay.addEventListener('click', handleBattleTap);
+}
+
+// =========================================================
+//  連打（タップ）処理
+// =========================================================
+function handleBattleTap(e: MouseEvent): void {
+  if (state.timerRemaining <= 0 || state.currentScreen !== 'screen-battle') return;
+
+  // 1タップにつき1秒減少（難易度や好みで調整可能）
+  const tapPower = 1;
+  state.timerRemaining = Math.max(0, state.timerRemaining - tapPower);
+
+  // 即座にUI更新
+  const progress = 1 - state.timerRemaining / state.timerMax;
+  updateChargeBar(progress);
+  updateTimerDisplay(state.timerRemaining, state.timerMax);
+
+  // 敵が揺れるエフェクト
+  const sprite = getEl('enemy-sprite');
+  sprite.classList.remove('enemy-shake');
+  void sprite.offsetWidth; // リフロー強制でアニメーション再トリガー
+  sprite.classList.add('enemy-shake');
+
+  // パーティクル（星や光）をタップ位置に表示
+  createTapParticle(e.clientX, e.clientY);
+
+  // ゲージMAXになったら撃破
+  if (state.timerRemaining <= 0) {
+    if (state.timerInterval !== null) clearInterval(state.timerInterval);
+    if (state.speechInterval !== null) clearInterval(state.speechInterval);
+    triggerVictory();
+  }
+}
+
+function createTapParticle(x: number, y: number): void {
+  const p = document.createElement('div');
+  p.className = 'tap-particle';
+  p.textContent = '✨'; // 好きな絵文字やSVG
+  p.style.left = `${x}px`;
+  p.style.top = `${y}px`;
+  document.body.appendChild(p);
+  
+  // アニメーション終了後に削除
+  setTimeout(() => {
+    p.remove();
+  }, 600);
 }
 
 // =========================================================
@@ -764,6 +815,7 @@ declare global {
     closeRetreatModal: typeof closeRetreatModal;
     buyGoods: typeof buyGoods;
     selectCustomEnemy: typeof selectCustomEnemy;
+    handleBattleTap: typeof handleBattleTap;
   }
 }
 window.showScreen      = showScreen;
@@ -773,6 +825,7 @@ window.confirmRetreat  = confirmRetreat;
 window.closeRetreatModal = closeRetreatModal;
 window.buyGoods        = buyGoods;
 window.selectCustomEnemy = selectCustomEnemy;
+window.handleBattleTap   = handleBattleTap;
 
 // =========================================================
 //  初期化
