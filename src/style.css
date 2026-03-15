@@ -247,6 +247,14 @@ body::before {
   transform: scale(0.9);
 }
 
+.peace-icon {
+  -webkit-mask-image: url('public/_i_icon_12031_icon_120310_256.png');
+  mask-image: url('public/_i_icon_12031_icon_120310_256.png');
+  background: #FFCC80; /* ゲームに馴染む肌色 */
+  filter: drop-shadow(0 2px 4px rgba(141, 110, 99, 0.4));
+  transform: scale(0.9);
+}
+
 /* ===== ホーム画面 ===== */
 #screen-home {
   position: relative;
