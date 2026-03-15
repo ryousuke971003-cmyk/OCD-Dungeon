@@ -108,7 +108,9 @@ body::before {
 }
 .btn-back {
   position: absolute;
-  left: 0; top: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   font-size: 0.95rem;
@@ -117,9 +119,12 @@ body::before {
   cursor: pointer;
   padding: 4px 8px;
   border-radius: var(--radius-sm);
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
-.btn-back:hover { background: var(--orange-light); }
+.btn-back:hover { 
+  background: var(--orange-light);
+  transform: translateY(-50%) scale(1.05);
+}
 
 /* ヘッダー周りの余白調整 */
 .screen-header {
