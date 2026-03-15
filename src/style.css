@@ -225,6 +225,28 @@ body::before {
   transform: rotate(15deg) scale(1.1);
 }
 
+/* Custom Image Icons using mask-image */
+.custom-img-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.fire-icon {
+  -webkit-mask-image: url('public/_i_icon_13299_icon_132990_256.png');
+  mask-image: url('public/_i_icon_13299_icon_132990_256.png');
+  background: linear-gradient(180deg, #FFEB3B 0%, #FF9800 50%, #FF5722 100%);
+  filter: drop-shadow(0 2px 4px rgba(230, 81, 0, 0.4));
+  transform: scale(0.9);
+}
+
 /* ===== ホーム画面 ===== */
 #screen-home {
   position: relative;
