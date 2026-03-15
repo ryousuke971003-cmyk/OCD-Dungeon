@@ -44,21 +44,21 @@
         </div>
         <div class="stat-card">
           <div class="stat-icon">
-            <svg viewBox="0 0 100 100" class="svg-icon">
-              <!-- 提供画像に基づいたピースサインのシルエット -->
-              <path d="M50,95 C35,95 30,85 30,75 L30,55 Q30,45 40,45 L60,45 Q70,45 70,55 L70,75 C70,85 65,95 50,95 Z" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linejoin="round" />
-              <!-- 人差し指 -->
-              <path d="M42,45 L42,15 Q42,5 50,5 Q58,5 58,15 L58,45" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-              <!-- 中指 -->
-              <path d="M60,45 L75,10 Q78,0 88,3 Q98,6 92,18 L75,50" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-              <!-- 折り畳んだ指のライン -->
-              <path d="M42,55 Q42,65 52,65 Q62,65 62,55" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
-              <path d="M38,65 Q32,65 32,50" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
-              <!-- 輝きのエフェクト -->
-              <g stroke="#FFD700" stroke-width="3" stroke-linecap="round">
-                <line x1="10" y1="20" x2="18" y2="15" />
-                <line x1="50" y1="2" x2="50" y2="8" />
-                <line x1="90" y1="20" x2="82" y2="15" />
+            <svg viewBox="0 0 256 256" class="svg-icon">
+              <!-- 提供画像のデザインを忠実に再現したシルエット -->
+              <path d="M128,245 C95,245 78,230 78,210 C78,205 82,200 85,200 L85,190 Q65,185 55,160 Q45,130 55,105 Q65,85 85,85 C95,85 105,90 112,100 L112,45 Q112,25 128,25 Q144,25 144,45 L144,115 Q155,100 175,100 Q195,100 205,120 L205,160 Q205,185 185,200 L185,210 Q185,230 168,245 C155,245 141,245 128,245 Z" fill="#FFE0B2" stroke="#8D6E63" stroke-width="8" stroke-linejoin="round" />
+              <!-- 人差し指のライン -->
+              <path d="M112,110 L112,45 Q112,30 128,30 Q144,30 144,45 L144,130" fill="none" stroke="#8D6E63" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+              <!-- 中指のライン -->
+              <path d="M148,135 L165,35 Q168,20 183,23 Q198,26 195,45 L175,150" fill="none" stroke="#8D6E63" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+              <!-- 折り畳んだ指と親指のディテール -->
+              <path d="M112,120 Q112,150 140,150 Q168,150 168,115" fill="none" stroke="#8D6E63" stroke-width="8" stroke-linecap="round" />
+              <path d="M85,150 Q65,150 65,120 Q65,100 85,100" fill="none" stroke="#8D6E63" stroke-width="8" stroke-linecap="round" />
+              <!-- 装飾 -->
+              <g stroke="#FFD700" stroke-width="6" stroke-linecap="round">
+                <line x1="30" y1="50" x2="50" y2="35" />
+                <line x1="128" y1="5" x2="128" y2="15" />
+                <line x1="220" y1="50" x2="200" y2="35" />
               </g>
             </svg>
           </div>
@@ -79,17 +79,16 @@
         </div>
         <div class="stat-card">
           <div class="stat-icon">
-            <svg viewBox="0 0 100 100" class="svg-icon">
+            <svg viewBox="0 0 256 256" class="svg-icon">
               <defs>
-                <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%" stop-color="#FF8C42" />
-                  <stop offset="100%" stop-color="#FFB74D" />
+                <linearGradient id="fireGradFinal" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#FF5722" />
+                  <stop offset="50%" stop-color="#FF9800" />
+                  <stop offset="100%" stop-color="#FFEB3B" />
                 </linearGradient>
               </defs>
-              <!-- 提供画像に基づいた炎のシルエット -->
-              <path d="M50,95 C25,95 10,75 10,50 C10,35 25,25 28,15 Q30,5 35,15 Q40,25 40,35 Q40,20 50,5 Q60,20 60,35 Q60,25 65,15 Q70,5 72,15 T75,45 Q75,25 85,35 Q90,45 90,55 C90,75 75,95 50,95 Z" fill="url(#fireGrad)" stroke="#E65100" stroke-width="3" stroke-linejoin="round" />
-              <!-- 内側の炎のアクセント -->
-              <path d="M50,85 C35,85 25,75 25,55 Q35,60 40,45 Q45,60 50,30 Q55,60 60,45 Q65,60 75,55 Q75,75 50,85 Z" fill="#FFD740" opacity="0.6" />
+              <!-- 提供画像のデザインを忠実に再現した炎のシルエット -->
+              <path d="M128,245 C65,245 20,195 20,135 C20,90 55,55 70,15 C85,50 100,65 110,80 C105,45 115,15 135,15 C130,45 160,55 180,30 C185,65 210,85 236,115 C236,180 190,245 128,245 Z" fill="url(#fireGradFinal)" stroke="#E65100" stroke-width="8" stroke-linejoin="round" />
             </svg>
           </div>
           <div class="stat-value" id="streak-count">0</div>
@@ -133,11 +132,11 @@
     <div class="screen-header">
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>
-        <svg viewBox="0 0 100 100" class="header-icon">
-          <!-- ピースサイン（簡略版・シルエット調整済み） -->
-          <path d="M50,92 C40,92 35,85 35,78 L35,60 Q35,55 45,55 L65,55 Q75,55 75,60 L75,78 C75,85 70,92 50,92 Z" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linejoin="round" />
-          <path d="M42,55 L42,30 Q42,25 48,25 Q54,25 54,30 L54,55" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M56,55 L68,25 Q70,20 78,22 Q86,24 82,32 L70,60" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <svg viewBox="0 0 256 256" class="header-icon">
+          <!-- 提供画像のデザインを忠実に再現したシルエット（簡略版） -->
+          <path d="M128,240 C100,240 85,230 85,210 L85,190 Q65,185 55,160 Q45,130 55,110 Q65,95 85,95 C95,95 105,100 112,110 L112,55 Q112,40 128,40 Q144,40 144,55 L144,130 Q155,115 175,115 Q195,115 205,135 L205,170 Q205,195 185,210 L185,220 Q185,240 168,255 C155,255 141,255 128,240 Z" fill="#FFE0B2" stroke="#D35400" stroke-width="8" stroke-linejoin="round" />
+          <path d="M112,120 L112,55 Q112,45 128,45 Q144,45 144,55" fill="none" stroke="#D35400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M148,140 L165,45 Q168,35 180,38 Q192,41 188,52 L175,155" fill="none" stroke="#D35400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         クエスト選択
       </h2>
