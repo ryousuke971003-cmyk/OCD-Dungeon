@@ -372,10 +372,9 @@ function renderEnemySelect(): void {
   const grid = getEl('enemy-grid');
   grid.innerHTML = '';
   ENEMIES.forEach(enemy => {
-    const card = document.createElement('div');
+    const card = document.createElement('button');
     card.className = 'enemy-card';
     card.dataset['id'] = enemy.id;
-    card.style.setProperty('--card-accent', enemy.color);
     card.innerHTML = `
       <div class="enemy-avatar">${buildAvatarHTML(enemy, false)}</div>
       <div class="enemy-name">${enemy.name}</div>

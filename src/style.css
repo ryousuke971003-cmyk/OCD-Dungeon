@@ -415,40 +415,35 @@ body::before {
 
 .enemy-card {
   background: var(--card-bg);
-  border-radius: var(--radius);
-  padding: 20px 12px;
+  border: 1.5px solid var(--border-sepia);
+  border-radius: var(--radius-sm);
+  padding: 16px 12px;
   text-align: center;
   cursor: pointer;
-  border: 3px solid transparent;
-  box-shadow: 0 4px 14px var(--shadow);
-  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow-ink);
+  transition: all 0.2s ease;
   position: relative;
-  min-height: 190px; /* 少し余裕を持たせる */
+  min-height: 160px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
-  padding-bottom: 24px; /* 下部に余白を追加して内容を収める */
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
 }
-.enemy-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.2s;
-  border-radius: inherit;
-  z-index: -1;
+.enemy-card:hover {
+  background: var(--orange-light);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1);
 }
-.enemy-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--shadow); }
-.enemy-card:hover::before { opacity: 1; }
-.enemy-card.selected { border-color: var(--orange); transform: scale(1.03); }
-
-.enemy-card[data-id="jirorin"]   { --card-accent: #B2D8FF; }
-.enemy-card[data-id="dororu"]    { --card-accent: #F9D9B0; }
-.enemy-card[data-id="chiguhagu"]  { --card-accent: #E0D0FF; }
-.enemy-card[data-id="bosori"]    { --card-accent: #C8F5E0; }
-
-.enemy-card::before { background: var(--card-accent, #FFE8D6); }
+.enemy-card:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+.enemy-card.selected {
+  border-color: var(--orange-dark);
+  border-width: 2px;
+  background: var(--orange-light);
+}
 
 .enemy-avatar {
   width: 90px;
