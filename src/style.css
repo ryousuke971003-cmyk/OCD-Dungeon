@@ -108,9 +108,9 @@ body::before {
   color: var(--orange-dark);
 }
 .screen-header p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-sub);
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .btn-back {
   position: absolute;
@@ -429,11 +429,11 @@ body::before {
   box-shadow: var(--shadow-ink);
   transition: all 0.2s ease;
   position: relative;
-  min-height: 160px;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   font-family: inherit;
   transform: rotate(calc(var(--r, 0) * 1deg));
 }
@@ -463,9 +463,9 @@ body::before {
 }
 
 .enemy-avatar {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 10px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 6px;
 }
 .enemy-avatar img {
   width: 100%;
@@ -478,14 +478,14 @@ body::before {
 }
 
 .enemy-name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--text);
 }
 .enemy-category {
-  font-size: 0.9rem; /* カテゴリーを少し目立たせる */
+  font-size: 0.8rem; /* カテゴリーを少し目立たせる */
   color: var(--text-soft);
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .enemy-desc {
   display: none; /* 個別画面では非表示にする */
@@ -496,10 +496,10 @@ body::before {
   background: var(--card-bg);
   border: 1px solid var(--border-sepia);
   border-radius: var(--radius-sm);
-  padding: 24px 20px;
+  padding: 16px 14px;
   box-shadow: var(--shadow-ink);
   text-align: center;
-  margin: 24px 0 40px; /* 上下のマージンを増やして独立させる */
+  margin: 16px 0 24px; /* 上下のマージンを増やして独立させる */
 }
 .custom-enemy-section h3 { font-size: 1.1rem; font-weight: 800; color: var(--purple); }
 .custom-desc { font-size: 0.85rem; color: var(--text-sub); margin: 6px 0 14px; }
