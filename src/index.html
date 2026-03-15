@@ -16,11 +16,11 @@
 
 <body>
 
-  <!-- ===== ホーム / 自室画面 ===== -->
+  <!-- ===== ホーム画面 ===== -->
   <div id="screen-home" class="screen active">
     <div class="home-room" id="home-room"></div>
     <div class="home-ui">
-      <!-- プレイヤー情報（コイン表示） -->
+
       <!-- タイトル -->
       <div class="screen-header">
         <div class="title-banner">
@@ -45,20 +45,20 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <!-- ピースサインの手（指を広げたデザイン） -->
+              <!-- 手首・手の平のベース -->
+              <path d="M40,92 Q32,92 32,84 L32,70 Q32,55 45,55 L65,55 Q78,55 78,70 L78,84 Q78,92 70,92 Z" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linejoin="round" />
               <!-- 人差し指 -->
-              <path d="M42,60 L25,25 Q20,15 30,12 Q40,9 45,22 L52,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <path d="M40,55 L28,25 Q25,18 35,15 Q45,12 48,25 L52,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
               <!-- 中指 -->
-              <path d="M52,55 L70,20 Q75,10 85,15 Q95,20 80,35 L62,65" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
-              <!-- 手の平と他の指 -->
-              <path d="M42,60 Q35,60 30,70 Q25,85 45,90 Q75,90 75,70 Q75,55 62,65" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
-              <!-- 親指の付け根 -->
-              <path d="M35,65 Q25,65 25,50 Q30,40 42,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
-              <!-- 装飾（もっと輝き） -->
+              <path d="M55,55 L68,20 Q72,12 82,15 Q92,18 85,30 L70,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              <!-- 折り畳んだ指（親指が重なる感じ） -->
+              <path d="M45,55 Q45,75 60,75 Q75,75 75,55" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
+              <path d="M42,65 Q35,65 35,50" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
+              <!-- 輝きのエフェクト -->
               <g stroke="#FFD700" stroke-width="3" stroke-linecap="round">
-                <line x1="10" y1="20" x2="15" y2="15" />
-                <line x1="50" y1="5" x2="50" y2="12" />
-                <line x1="90" y1="20" x2="85" y2="15" />
+                <line x1="10" y1="25" x2="18" y2="20" />
+                <line x1="50" y1="5" x2="50" y2="15" />
+                <line x1="90" y1="25" x2="82" y2="20" />
               </g>
             </svg>
           </div>
@@ -80,9 +80,16 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <path d="M50,90 Q20,70 30,40 Q35,10 50,30 Q65,10 70,40 Q80,70 50,90" fill="#FF8C42" stroke="#E05A00"
-                stroke-width="2" />
-              <path d="M50,75 Q40,65 40,50 Q43,35 50,45 Q57,35 60,50 Q60,65 50,75" fill="#FFB74D" />
+              <defs>
+                <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#FF8C42" />
+                  <stop offset="100%" stop-color="#FFB74D" />
+                </linearGradient>
+              </defs>
+              <!-- 炎のメイン形状 -->
+              <path d="M50,95 Q25,85 20,55 Q18,35 45,45 Q35,10 55,5 Q60,35 85,45 Q75,85 50,95Z" fill="url(#fireGrad)" stroke="#E65100" stroke-width="3" stroke-linejoin="round" />
+              <!-- 内側の炎（ゆらぎ） -->
+              <path d="M50,85 Q35,75 35,55 Q45,65 50,45 Q55,65 65,55 Q65,75 50,85Z" fill="#FFD740" opacity="0.6" />
             </svg>
           </div>
           <div class="stat-value" id="streak-count">0</div>
@@ -128,8 +135,9 @@
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
           <!-- ピースサイン（簡略版） -->
-          <path d="M30,30 L50,60 L70,30" fill="none" stroke="#D35400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="50" cy="75" r="15" fill="#FFE0B2" stroke="#D35400" stroke-width="4" />
+          <path d="M40,85 Q35,85 35,80 L35,70 Q35,60 45,60 L65,60 Q75,60 75,70 L75,80 Q75,85 70,85 Z" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linejoin="round" />
+          <path d="M42,60 L32,35 Q30,30 38,28 Q46,26 48,35 L50,60" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M58,60 L68,30 Q70,25 78,28 Q86,31 82,40 L72,65" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         クエスト選択
       </h2>
