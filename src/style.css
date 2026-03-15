@@ -75,6 +75,7 @@ body::before {
   flex-direction: column;
   height: 100vh;
   height: -webkit-fill-available;
+  height: 100dvh;
   padding: 16px;
   animation: fadeIn 0.3s ease;
   overflow: hidden;
@@ -744,6 +745,7 @@ body::before {
   background: linear-gradient(135deg, #1A1035, #2C1A55);
   color: #fff;
   align-items: center;
+  justify-content: center;
   text-align: center;
   overflow-y: auto;
 }
