@@ -45,13 +45,21 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <!-- Vサインの手 -->
-              <path d="M40,85 Q40,70 40,60 L40,30 Q40,20 45,20 Q50,20 50,30 L50,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
-              <path d="M50,55 L50,30 Q50,20 55,20 Q60,20 60,30 L60,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
-              <path d="M60,60 Q75,60 70,75 Q65,90 40,90 Q25,90 25,75 Q25,60 40,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
-              <path d="M35,65 Q25,60 30,50 Q35,40 45,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
-              <!-- 装飾（輝き） -->
-              <path d="M75,25 L80,20 M85,35 L92,35 M78,48 L85,55" stroke="#FFD700" stroke-width="3" stroke-linecap="round" />
+              <!-- ピースサインの手（指を広げたデザイン） -->
+              <!-- 人差し指 -->
+              <path d="M42,60 L25,25 Q20,15 30,12 Q40,9 45,22 L52,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <!-- 中指 -->
+              <path d="M52,55 L70,20 Q75,10 85,15 Q95,20 80,35 L62,65" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <!-- 手の平と他の指 -->
+              <path d="M42,60 Q35,60 30,70 Q25,85 45,90 Q75,90 75,70 Q75,55 62,65" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <!-- 親指の付け根 -->
+              <path d="M35,65 Q25,65 25,50 Q30,40 42,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <!-- 装飾（もっと輝き） -->
+              <g stroke="#FFD700" stroke-width="3" stroke-linecap="round">
+                <line x1="10" y1="20" x2="15" y2="15" />
+                <line x1="50" y1="5" x2="50" y2="12" />
+                <line x1="90" y1="20" x2="85" y2="15" />
+              </g>
             </svg>
           </div>
           <div class="stat-value" id="total-wins">0</div>
@@ -119,9 +127,9 @@
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
-          <!-- Vサイン（簡略版） -->
-          <path d="M40,80 V40 M40,40 L30,20 M40,40 L50,20" fill="none" stroke="#D35400" stroke-width="8" stroke-linecap="round" />
-          <circle cx="40" cy="70" r="15" fill="#FFE0B2" stroke="#D35400" stroke-width="4" />
+          <!-- ピースサイン（簡略版） -->
+          <path d="M30,30 L50,60 L70,30" fill="none" stroke="#D35400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="50" cy="75" r="15" fill="#FFE0B2" stroke="#D35400" stroke-width="4" />
         </svg>
         クエスト選択
       </h2>
