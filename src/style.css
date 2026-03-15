@@ -255,7 +255,7 @@ body::before {
   transform: scale(0.9);
 }
 
-.medal-icon {
+.medal-mask-icon {
   -webkit-mask-image: url('public/ホーム画面　メダル.svg');
   mask-image: url('public/ホーム画面　メダル.svg');
   background: linear-gradient(180deg, #FFE082 0%, #FFB300 50%, #FF8F00 100%);
