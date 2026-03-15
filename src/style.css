@@ -429,20 +429,27 @@ body::before {
   justify-content: center;
   gap: 8px;
   font-family: inherit;
+  transform: rotate(calc(var(--r, 0) * 1deg));
 }
+.enemy-card:nth-child(4n+1) { --r: -1.2; }
+.enemy-card:nth-child(4n+2) { --r: 0.8; }
+.enemy-card:nth-child(4n+3) { --r: -0.5; }
+.enemy-card:nth-child(4n+4) { --r: 1.5; }
+
 .enemy-card:hover {
   background: var(--orange-light);
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(0deg);
   box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1);
 }
 .enemy-card:active {
-  transform: scale(0.98);
+  transform: scale(0.98) rotate(0deg);
   box-shadow: none;
 }
 .enemy-card.selected {
   border-color: var(--orange-dark);
   border-width: 2px;
   background: var(--orange-light);
+  transform: scale(1.03) rotate(0deg);
 }
 
 .enemy-avatar {
