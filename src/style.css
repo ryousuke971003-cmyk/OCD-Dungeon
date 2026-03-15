@@ -255,6 +255,14 @@ body::before {
   transform: scale(0.9);
 }
 
+.medal-icon {
+  -webkit-mask-image: url('public/ホーム画面　メダル.svg');
+  mask-image: url('public/ホーム画面　メダル.svg');
+  background: linear-gradient(180deg, #FFE082 0%, #FFB300 50%, #FF8F00 100%);
+  filter: drop-shadow(0 2px 4px rgba(255, 179, 0, 0.4));
+  transform: scale(0.9);
+}
+
 /* ===== ホーム画面 ===== */
 #screen-home {
   position: relative;
