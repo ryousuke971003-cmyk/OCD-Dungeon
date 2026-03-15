@@ -263,6 +263,14 @@ body::before {
   transform: scale(0.9);
 }
 
+.coin-mask-icon {
+  -webkit-mask-image: url('/coin.svg');
+  mask-image: url('/coin.svg');
+  background: linear-gradient(180deg, #FFD700 0%, #FFB300 50%, #FBC02D 100%);
+  filter: drop-shadow(0 2px 4px rgba(255, 179, 0, 0.3));
+  transform: scale(0.9);
+}
+
 /* ===== ホーム画面 ===== */
 #screen-home {
   position: relative;
