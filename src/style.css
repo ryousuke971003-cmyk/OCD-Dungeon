@@ -266,7 +266,7 @@ body::before {
 .fire-icon {
   -webkit-mask-image: url('/flag.svg');
   mask-image: url('/flag.svg');
-  background: #F8B195; /* タイトルのサーモンピンク */
+  background: var(--orange-main); /* タイトルとボタンの色に合わせる */
   filter: drop-shadow(0 1px 2px rgba(230, 81, 0, 0.2));
   transform: scale(0.9);
 }
@@ -347,7 +347,7 @@ body::before {
   text-align: center;
 }
 .title-banner {
-  background: #F8B195; /* 柔らかなサーモンピンク */
+  background: var(--orange-main); /* ボタンの色（オレンジ）に合わせる */
   padding: 10px 40px;
   position: relative;
   display: inline-block;
