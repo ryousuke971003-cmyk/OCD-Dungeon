@@ -240,24 +240,24 @@ body::before {
 }
 
 .fire-icon {
-  -webkit-mask-image: url('public/_i_icon_13299_icon_132990_256.png');
-  mask-image: url('public/_i_icon_13299_icon_132990_256.png');
+  -webkit-mask-image: url('/_i_icon_13299_icon_132990_256.png');
+  mask-image: url('/_i_icon_13299_icon_132990_256.png');
   background: linear-gradient(180deg, #FFEB3B 0%, #FF9800 50%, #FF5722 100%);
   filter: drop-shadow(0 2px 4px rgba(230, 81, 0, 0.4));
   transform: scale(0.9);
 }
 
 .peace-icon {
-  -webkit-mask-image: url('public/_i_icon_12031_icon_120310_256.png');
-  mask-image: url('public/_i_icon_12031_icon_120310_256.png');
+  -webkit-mask-image: url('/wins.svg');
+  mask-image: url('/wins.svg');
   background: #FFCC80; /* ゲームに馴染む肌色 */
   filter: drop-shadow(0 2px 4px rgba(141, 110, 99, 0.4));
   transform: scale(0.9);
 }
 
 .medal-mask-icon {
-  -webkit-mask-image: url('public/ホーム画面　メダル.svg');
-  mask-image: url('public/ホーム画面　メダル.svg');
+  -webkit-mask-image: url('/medal.svg');
+  mask-image: url('/medal.svg');
   background: linear-gradient(180deg, #FFE082 0%, #FFB300 50%, #FF8F00 100%);
   filter: drop-shadow(0 2px 4px rgba(255, 179, 0, 0.4));
   transform: scale(0.9);
