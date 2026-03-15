@@ -343,6 +343,12 @@ function showScreen(id: string): void {
   if (target) target.classList.add('active');
   state.currentScreen = id;
 
+  // 画面遷移時の誤操作防止（300ms クールダウン）
+  document.body.classList.add('is-transitioning');
+  setTimeout(() => {
+    document.body.classList.remove('is-transitioning');
+  }, 300);
+
   // 各画面の初期化
   if (id === 'screen-home')    renderHome();
   if (id === 'screen-select')  renderEnemySelect();

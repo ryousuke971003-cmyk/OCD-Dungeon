@@ -60,6 +60,11 @@ html, body {
   position: relative;
 }
 
+/* 画面遷移中の誤操作防止 */
+body.is-transitioning {
+  pointer-events: none;
+}
+
 body::before {
   content: '';
   position: absolute;
