@@ -45,20 +45,20 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <!-- 手首・手の平のベース -->
-              <path d="M40,92 Q32,92 32,84 L32,70 Q32,55 45,55 L65,55 Q78,55 78,70 L78,84 Q78,92 70,92 Z" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linejoin="round" />
+              <!-- 提供画像に基づいたピースサインのシルエット -->
+              <path d="M50,95 C35,95 30,85 30,75 L30,55 Q30,45 40,45 L60,45 Q70,45 70,55 L70,75 C70,85 65,95 50,95 Z" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linejoin="round" />
               <!-- 人差し指 -->
-              <path d="M40,55 L28,25 Q25,18 35,15 Q45,12 48,25 L52,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M42,45 L42,15 Q42,5 50,5 Q58,5 58,15 L58,45" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
               <!-- 中指 -->
-              <path d="M55,55 L68,20 Q72,12 82,15 Q92,18 85,30 L70,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-              <!-- 折り畳んだ指（親指が重なる感じ） -->
-              <path d="M45,55 Q45,75 60,75 Q75,75 75,55" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
-              <path d="M42,65 Q35,65 35,50" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
+              <path d="M60,45 L75,10 Q78,0 88,3 Q98,6 92,18 L75,50" fill="#FFE0B2" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              <!-- 折り畳んだ指のライン -->
+              <path d="M42,55 Q42,65 52,65 Q62,65 62,55" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
+              <path d="M38,65 Q32,65 32,50" fill="none" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" />
               <!-- 輝きのエフェクト -->
               <g stroke="#FFD700" stroke-width="3" stroke-linecap="round">
-                <line x1="10" y1="25" x2="18" y2="20" />
-                <line x1="50" y1="5" x2="50" y2="15" />
-                <line x1="90" y1="25" x2="82" y2="20" />
+                <line x1="10" y1="20" x2="18" y2="15" />
+                <line x1="50" y1="2" x2="50" y2="8" />
+                <line x1="90" y1="20" x2="82" y2="15" />
               </g>
             </svg>
           </div>
@@ -86,10 +86,10 @@
                   <stop offset="100%" stop-color="#FFB74D" />
                 </linearGradient>
               </defs>
-              <!-- 炎のメイン形状 -->
-              <path d="M50,95 Q25,85 20,55 Q18,35 45,45 Q35,10 55,5 Q60,35 85,45 Q75,85 50,95Z" fill="url(#fireGrad)" stroke="#E65100" stroke-width="3" stroke-linejoin="round" />
-              <!-- 内側の炎（ゆらぎ） -->
-              <path d="M50,85 Q35,75 35,55 Q45,65 50,45 Q55,65 65,55 Q65,75 50,85Z" fill="#FFD740" opacity="0.6" />
+              <!-- 提供画像に基づいた炎のシルエット -->
+              <path d="M50,95 C25,95 10,75 10,50 C10,35 25,25 28,15 Q30,5 35,15 Q40,25 40,35 Q40,20 50,5 Q60,20 60,35 Q60,25 65,15 Q70,5 72,15 T75,45 Q75,25 85,35 Q90,45 90,55 C90,75 75,95 50,95 Z" fill="url(#fireGrad)" stroke="#E65100" stroke-width="3" stroke-linejoin="round" />
+              <!-- 内側の炎のアクセント -->
+              <path d="M50,85 C35,85 25,75 25,55 Q35,60 40,45 Q45,60 50,30 Q55,60 60,45 Q65,60 75,55 Q75,75 50,85 Z" fill="#FFD740" opacity="0.6" />
             </svg>
           </div>
           <div class="stat-value" id="streak-count">0</div>
@@ -134,10 +134,10 @@
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
-          <!-- ピースサイン（簡略版） -->
-          <path d="M40,85 Q35,85 35,80 L35,70 Q35,60 45,60 L65,60 Q75,60 75,70 L75,80 Q75,85 70,85 Z" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linejoin="round" />
-          <path d="M42,60 L32,35 Q30,30 38,28 Q46,26 48,35 L50,60" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M58,60 L68,30 Q70,25 78,28 Q86,31 82,40 L72,65" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- ピースサイン（簡略版・シルエット調整済み） -->
+          <path d="M50,92 C40,92 35,85 35,78 L35,60 Q35,55 45,55 L65,55 Q75,55 75,60 L75,78 C75,85 70,92 50,92 Z" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linejoin="round" />
+          <path d="M42,55 L42,30 Q42,25 48,25 Q54,25 54,30 L54,55" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M56,55 L68,25 Q70,20 78,22 Q86,24 82,32 L70,60" fill="#FFE0B2" stroke="#D35400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         クエスト選択
       </h2>
