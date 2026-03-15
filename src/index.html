@@ -45,17 +45,13 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <!-- トロフィーの台座 -->
-              <rect x="30" y="75" width="40" height="10" rx="2" fill="#5D4037" />
-              <path d="M45,75 L45,65 L55,65 L55,75 Z" fill="#5D4037" />
-              <!-- トロフィーのカップ -->
-              <path d="M30,25 Q30,65 50,65 Q70,65 70,25 Z" fill="#FFD700" stroke="#B8860B" stroke-width="2" />
-              <!-- 取手（左） -->
-              <path d="M30,30 Q20,30 20,45 Q20,55 30,55" fill="none" stroke="#B8860B" stroke-width="3" stroke-linecap="round" />
-              <!-- 取手（右） -->
-              <path d="M70,30 Q80,30 80,45 Q80,55 70,55" fill="none" stroke="#B8860B" stroke-width="3" stroke-linecap="round" />
-              <!-- 輝き -->
-              <circle cx="40" cy="35" r="3" fill="#FFF" opacity="0.6" />
+              <!-- Vサインの手 -->
+              <path d="M40,85 Q40,70 40,60 L40,30 Q40,20 45,20 Q50,20 50,30 L50,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <path d="M50,55 L50,30 Q50,20 55,20 Q60,20 60,30 L60,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <path d="M60,60 Q75,60 70,75 Q65,90 40,90 Q25,90 25,75 Q25,60 40,60" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <path d="M35,65 Q25,60 30,50 Q35,40 45,55" fill="#FFE0B2" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" />
+              <!-- 装飾（輝き） -->
+              <path d="M75,25 L80,20 M85,35 L92,35 M78,48 L85,55" stroke="#FFD700" stroke-width="3" stroke-linecap="round" />
             </svg>
           </div>
           <div class="stat-value" id="total-wins">0</div>
@@ -123,8 +119,9 @@
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
-          <!-- トロフィー（簡略版） -->
-          <path d="M35,80 H65 M50,80 V70 M30,30 Q30,70 50,70 Q70,70 70,30 Z" fill="#FFD700" stroke="#B8860B" stroke-width="4" stroke-linejoin="round" />
+          <!-- Vサイン（簡略版） -->
+          <path d="M40,80 V40 M40,40 L30,20 M40,40 L50,20" fill="none" stroke="#D35400" stroke-width="8" stroke-linecap="round" />
+          <circle cx="40" cy="70" r="15" fill="#FFE0B2" stroke="#D35400" stroke-width="4" />
         </svg>
         クエスト選択
       </h2>
