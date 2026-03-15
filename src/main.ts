@@ -347,7 +347,7 @@ function showScreen(id: string): void {
   document.body.classList.add('is-transitioning');
   setTimeout(() => {
     document.body.classList.remove('is-transitioning');
-  }, 300);
+  }, 500);
 
   // 各画面の初期化
   if (id === 'screen-home')    renderHome();
