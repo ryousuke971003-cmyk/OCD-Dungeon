@@ -113,11 +113,11 @@ body::before {
   transform: translateY(-50%);
   background: var(--card-bg);
   border: 1px solid var(--border-sepia);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-family: inherit;
   color: var(--text-main);
   cursor: pointer;
-  padding: 4px 12px;
+  padding: 8px 16px;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-ink);
   transition: all 0.2s ease;
