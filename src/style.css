@@ -111,19 +111,26 @@ body::before {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 0.95rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-sepia);
+  font-size: 0.9rem;
   font-family: inherit;
-  color: var(--orange-dark);
+  color: var(--text-main);
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 4px 12px;
   border-radius: var(--radius-sm);
-  transition: background 0.2s, transform 0.2s;
+  box-shadow: var(--shadow-ink);
+  transition: all 0.2s ease;
+  z-index: 10;
 }
 .btn-back:hover { 
   background: var(--orange-light);
-  transform: translateY(-50%) scale(1.05);
+  transform: translateY(-52%) scale(1.05);
+  box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1);
+}
+.btn-back:active {
+  transform: translateY(-48%) scale(0.98);
+  box-shadow: none;
 }
 
 /* ヘッダー周りの余白調整 */
