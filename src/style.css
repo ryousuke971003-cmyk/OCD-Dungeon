@@ -415,7 +415,7 @@ body::before {
 
 .enemy-card {
   background: var(--card-bg);
-  border: 1.5px solid var(--border-sepia);
+  border: 1px solid var(--border-sepia);
   border-radius: var(--radius-sm);
   padding: 16px 12px;
   text-align: center;
