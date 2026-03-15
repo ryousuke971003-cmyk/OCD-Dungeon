@@ -162,12 +162,16 @@ body::before {
 .btn-primary:hover { transform: translateY(1px); box-shadow: 0 3px 0 var(--orange-dark), var(--shadow-soft); background: #ff9d63; }
 
 .btn-secondary {
-  background: transparent;
+  background: var(--bg-paper);
   color: var(--text-main);
-  border: 1px solid var(--border-sepia);
-  box-shadow: none;
+  border-bottom: 4px solid var(--border-sepia);
+  box-shadow: 0 4px 0 var(--border-sepia), var(--shadow-ink);
 }
-.btn-secondary:hover { background: rgba(255, 183, 77, 0.1); }
+.btn-secondary:hover { 
+  background: var(--bg-paper);
+  transform: translateY(1px); 
+  box-shadow: 0 3px 0 var(--border-sepia), var(--shadow-ink);
+}
 
 .btn-accent {
   background: #AAB7B8; /* ソフトなグレー・ブルー */
