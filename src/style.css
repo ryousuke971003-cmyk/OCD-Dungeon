@@ -477,9 +477,10 @@ body::before {
 /* カスタム敵 */
 .custom-enemy-section {
   background: var(--card-bg);
-  border-radius: var(--radius);
+  border: 1px solid var(--border-sepia);
+  border-radius: var(--radius-sm);
   padding: 24px 20px;
-  box-shadow: 0 4px 14px var(--shadow);
+  box-shadow: var(--shadow-ink);
   text-align: center;
   margin: 24px 0 40px; /* 上下のマージンを増やして独立させる */
 }
