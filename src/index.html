@@ -112,8 +112,8 @@
   </div>
 
   <!-- ===== 難易度選択画面 ===== -->
-  <div id="screen-difficulty" class="screen">
-    <div class="screen-header">
+  <div id="screen-difficulty" class="screen" onclick="showScreen('screen-select')">
+    <div class="screen-header" onclick="event.stopPropagation()">
       <button class="btn-back" onclick="showScreen('screen-select')">戻る</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
@@ -125,11 +125,11 @@
       <p>今日の自分の状態に合わせて選ぼう</p>
     </div>
 
-    <div class="selected-enemy-preview" id="selected-enemy-preview">
+    <div class="selected-enemy-preview" id="selected-enemy-preview" onclick="event.stopPropagation()">
       <!-- 選択した敵のプレビューがJSで入る -->
     </div>
 
-    <div class="difficulty-cards">
+    <div class="difficulty-cards" onclick="event.stopPropagation()">
       <button class="difficulty-card difficulty-easy" onclick="startBattle('easy')" id="diff-easy">
         <div class="diff-icon">
           <svg viewBox="0 0 100 100">
