@@ -393,7 +393,13 @@ function buildAvatarHTML(enemy: Enemy, large = false): string {
   } else if (enemy.avatarType === 'svg' && enemy.avatarSvg) {
     return enemy.avatarSvg;
   }
-  return `<span style="font-size:${large ? '5rem' : '3rem'};">🌫️</span>`;
+  return `<div style="width:${large ? '100px' : '60px'}; height:${large ? '100px' : '60px'}; margin: auto;">
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="#E0E0E0" opacity="0.5" />
+      <path d="M30,50 Q50,20 70,50 Q50,80 30,50" fill="none" stroke="#9E9E9E" stroke-width="4" />
+      <circle cx="50" cy="50" r="10" fill="#9E9E9E" />
+    </svg>
+  </div>`;
 }
 
 function selectEnemy(enemy: Enemy): void {
@@ -542,8 +548,14 @@ function handleBattleTap(e: MouseEvent): void {
 function createTapParticle(x: number, y: number): void {
   const p = document.createElement('div');
   p.className = 'tap-particle';
-  const particles = ['✨', '⭐', '🌟', '🔆', '💠'];
-  p.textContent = particles[Math.floor(Math.random() * particles.length)];
+  const particles = [
+    `<svg viewBox="0 0 100 100"><path d="M50,10 L60,40 L90,50 L60,60 L50,90 L40,60 L10,50 L40,40 Z" fill="#FFD740"/></svg>`,
+    `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#FFF"/></svg>`,
+    `<svg viewBox="0 0 100 100"><path d="M50,20 L80,50 L50,80 L20,50 Z" fill="#64B5F6"/></svg>`
+  ];
+  p.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+  p.style.width = '24px';
+  p.style.height = '24px';
   p.style.left = `${x}px`;
   p.style.top = `${y}px`;
   document.body.appendChild(p);
@@ -673,7 +685,7 @@ function showVictoryScreen(coins: number, newMedals: Medal[]): void {
   getEl('victory-title').textContent = '撃破！！';
   getEl('victory-msg').textContent = state.selectedEnemy?.defeatMsg ?? '';
 
-  // コイン
+  // コイン（アイコンは既にHTML側でSVG化されているため、テキストのみ更新）
   const rewardCoinEl = document.getElementById('reward-coin');
   if (rewardCoinEl) rewardCoinEl.textContent = String(coins);
 

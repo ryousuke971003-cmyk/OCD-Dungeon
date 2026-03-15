@@ -33,10 +33,12 @@
       <div class="stats-row">
         <div class="stat-card">
           <div class="stat-icon">
-            <svg viewBox="0 0 100 100" class="svg-icon">
-              <circle cx="50" cy="50" r="40" fill="#FFD700" stroke="#B8860B" stroke-width="2"/>
-              <text x="50" y="65" font-family="sans-serif" font-size="40" font-weight="bold" fill="#FFF" text-anchor="middle">C</text>
-            </svg>
+          <svg viewBox="0 0 100 100" class="svg-icon coin-icon">
+                <circle cx="50" cy="50" r="45" fill="#FFD740" stroke="#FFB300" stroke-width="2" />
+                <circle cx="50" cy="50" r="35" fill="#FFECB3" opacity="0.5" />
+                <path d="M50,25 V75 M35,50 H65" stroke="#FFB300" stroke-width="8" stroke-linecap="round" />
+                <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="4" stroke-dasharray="10 10" />
+              </svg>
           </div>
           <div class="stat-value" id="coin-count">0</div>
           <div class="stat-label">コイン</div>
@@ -44,8 +46,8 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <path d="M20,80 L30,40 L70,20 L80,30 L60,70 Z" fill="#D35400" stroke="#5D4037" stroke-width="3"/>
-              <rect x="15" y="75" width="15" height="10" rx="2" fill="#8D6E63"/>
+              <path d="M20,80 L30,40 L70,20 L80,30 L60,70 Z" fill="#D35400" stroke="#5D4037" stroke-width="3" />
+              <rect x="15" y="75" width="15" height="10" rx="2" fill="#8D6E63" />
             </svg>
           </div>
           <div class="stat-value" id="total-wins">0</div>
@@ -54,9 +56,10 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <circle cx="50" cy="50" r="40" fill="#FFD700" stroke="#B8860B" stroke-width="2"/>
-              <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-dasharray="4 4"/>
-              <path d="M50,30 L55,45 L70,45 L58,55 L63,70 L50,60 L37,70 L42,55 L30,45 L45,45 Z" fill="#FFF"/>
+              <circle cx="50" cy="50" r="40" fill="#FFD700" stroke="#B8860B" stroke-width="2" />
+              <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"
+                stroke-dasharray="4 4" />
+              <path d="M50,30 L55,45 L70,45 L58,55 L63,70 L50,60 L37,70 L42,55 L30,45 L45,45 Z" fill="#FFF" />
             </svg>
           </div>
           <div class="stat-value" id="total-medals">0</div>
@@ -65,8 +68,9 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <path d="M50,90 Q20,70 30,40 Q35,10 50,30 Q65,10 70,40 Q80,70 50,90" fill="#FF8C42" stroke="#E05A00" stroke-width="2"/>
-              <path d="M50,75 Q40,65 40,50 Q43,35 50,45 Q57,35 60,50 Q60,65 50,75" fill="#FFB74D"/>
+              <path d="M50,90 Q20,70 30,40 Q35,10 50,30 Q65,10 70,40 Q80,70 50,90" fill="#FF8C42" stroke="#E05A00"
+                stroke-width="2" />
+              <path d="M50,75 Q40,65 40,50 Q43,35 50,45 Q57,35 60,50 Q60,65 50,75" fill="#FFB74D" />
             </svg>
           </div>
           <div class="stat-value" id="streak-count">0</div>
@@ -78,25 +82,25 @@
       <div class="home-actions">
         <button id="btn-start-quest" class="btn btn-primary btn-large" onclick="showScreen('screen-select')">
           <svg viewBox="0 0 100 100" class="btn-icon">
-            <path d="M20,80 L35,45 L80,20 L85,25 L55,70 Z" fill="#FFF" opacity="0.9"/>
-            <path d="M15,85 L30,70" stroke="#FFF" stroke-width="8" stroke-linecap="round"/>
+            <path d="M20,80 L35,45 L80,20 L85,25 L55,70 Z" fill="#FFF" opacity="0.9" />
+            <path d="M15,85 L30,70" stroke="#FFF" stroke-width="8" stroke-linecap="round" />
           </svg>
           クエストへ出発！
         </button>
         <div class="home-sub-buttons">
           <button class="btn btn-secondary" onclick="showScreen('screen-medals')">
             <svg viewBox="0 0 100 100" class="btn-icon-sm">
-              <circle cx="50" cy="50" r="40" fill="#FFB74D"/>
-              <path d="M50,30 L55,45 L70,45 L58,55 L63,70 L50,60 L37,70 L42,55 L30,45 L45,45 Z" fill="#FFF"/>
+              <circle cx="50" cy="50" r="40" fill="#FFB74D" />
+              <path d="M50,30 L55,45 L70,45 L58,55 L63,70 L50,60 L37,70 L42,55 L30,45 L45,45 Z" fill="#FFF" />
             </svg>
             メダル図鑑
           </button>
           <button class="btn btn-secondary" onclick="showScreen('screen-goods')">
             <svg viewBox="0 0 100 100" class="btn-icon-sm">
-              <rect x="20" y="35" width="60" height="45" rx="4" fill="#64B5F6"/>
-              <path d="M20,50 H80" stroke="#FFF" stroke-width="4"/>
-              <path d="M50,35 V80" stroke="#FFF" stroke-width="4"/>
-              <path d="M50,35 Q40,20 30,35 Q60,20 70,35" fill="#BBDEFB" stroke="#FFF" stroke-width="2"/>
+              <rect x="20" y="35" width="60" height="45" rx="4" fill="#64B5F6" />
+              <path d="M20,50 H80" stroke="#FFF" stroke-width="4" />
+              <path d="M50,35 V80" stroke="#FFF" stroke-width="4" />
+              <path d="M50,35 Q40,20 30,35 Q60,20 70,35" fill="#BBDEFB" stroke="#FFF" stroke-width="2" />
             </svg>
             グッズ交換所
           </button>
@@ -111,7 +115,7 @@
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
-          <path d="M20,80 L30,40 L70,20 L80,30 L60,70 Z" fill="#D35400"/>
+          <path d="M20,80 L30,40 L70,20 L80,30 L60,70 Z" fill="#D35400" />
         </svg>
         クエスト選択
       </h2>
@@ -122,10 +126,16 @@
       <div class="enemy-grid" id="enemy-grid">
         <!-- 敵カードはJSで生成 -->
       </div>
-  
+
       <!-- カスタム敵 -->
       <div class="custom-enemy-section">
-        <h3>✨ カスタム敵</h3>
+        <h3>
+          <svg viewBox="0 0 100 100" class="btn-icon-sm">
+            <path d="M50,20 L80,50 L50,80 L20,50 Z" fill="#BA68C8" />
+            <path d="M50,35 L65,50 L50,65 L35,50 Z" fill="#E1BEE7" />
+          </svg>
+          カスタム敵
+        </h3>
         <p class="custom-desc">あなただけのオリジナルの心の影を設定しよう</p>
         <div class="custom-form">
           <input type="text" id="custom-name" class="input-field" placeholder="敵に名前をつけよう（例：ドキドキくん）" maxlength="20" />
@@ -139,7 +149,13 @@
   <div id="screen-difficulty" class="screen">
     <div class="screen-header">
       <button class="btn-back" onclick="showScreen('screen-select')">← もどる</button>
-      <h2>⚡ 難易度選択</h2>
+      <h2>
+        <svg viewBox="0 0 100 100" class="header-icon">
+          <path d="M50,20 L80,80 L20,80 Z" fill="#FFD740" />
+          <path d="M50,40 L65,75 L35,75 Z" fill="#FFF" opacity="0.8" />
+        </svg>
+        難易度選択
+      </h2>
       <p>今日の自分の状態に合わせて選ぼう</p>
     </div>
 
@@ -149,19 +165,33 @@
 
     <div class="difficulty-cards">
       <button class="difficulty-card difficulty-easy" onclick="startBattle('easy')" id="diff-easy">
-        <div class="diff-icon">🌱</div>
+        <div class="diff-icon">
+          <svg viewBox="0 0 100 100">
+            <path d="M50,80 Q30,60 50,20 Q70,60 50,80" fill="#81C784" />
+            <path d="M30,50 Q50,70 70,50" stroke="#C8E6C9" stroke-width="4" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
         <div class="diff-name">よわい</div>
         <div class="diff-time">30チャージ</div>
         <div class="diff-desc">ちょっとだけ試してみる</div>
       </button>
       <button class="difficulty-card difficulty-normal" onclick="startBattle('normal')" id="diff-normal">
-        <div class="diff-icon">⚡</div>
+        <div class="diff-icon">
+          <svg viewBox="0 0 100 100">
+            <path d="M40,20 L60,50 L30,50 L70,80 L50,50 L80,50 Z" fill="#64B5F6" />
+          </svg>
+        </div>
         <div class="diff-name">ふつう</div>
         <div class="diff-time">100チャージ</div>
         <div class="diff-desc">いつもどおりに挑戦</div>
       </button>
       <button class="difficulty-card difficulty-hard" onclick="startBattle('hard')" id="diff-hard">
-        <div class="diff-icon">🔥</div>
+        <div class="diff-icon">
+          <svg viewBox="0 0 100 100">
+            <path d="M50,15 Q30,40 50,90 Q70,40 50,15" fill="#FF8A65" />
+            <path d="M50,35 Q40,50 50,75 Q60,50 50,35" fill="#FF5722" />
+          </svg>
+        </div>
         <div class="diff-name">つよい</div>
         <div class="diff-time">250チャージ</div>
         <div class="diff-desc">本気で立ち向かう</div>
@@ -186,14 +216,23 @@
     <!-- 連打ボタン -->
     <div class="tap-action-area">
       <button class="btn-tap" id="btn-tap" onclick="handleBattleTap(event)">
-        <span class="tap-icon">✨</span>
+        <span class="tap-icon">
+          <svg viewBox="0 0 100 100" class="btn-icon">
+            <path d="M50,10 L60,40 L90,50 L60,60 L50,90 L40,60 L10,50 L40,40 Z" fill="#FFF" />
+          </svg>
+        </span>
         <span class="tap-text">エネルギーを放つ！</span>
       </button>
     </div>
 
     <!-- 心の平穏チャージゲージ -->
     <div class="charge-section">
-      <div class="charge-label">✨ 心の平穏チャージ</div>
+      <div class="charge-label">
+        <svg viewBox="0 0 100 100" class="btn-icon-sm">
+          <path d="M50,10 L60,40 L90,50 L60,60 L50,90 L40,60 L10,50 L40,40 Z" fill="#FFD740" />
+        </svg>
+        心の平穏チャージ
+      </div>
       <div class="charge-bar-wrap">
         <div class="charge-bar" id="charge-bar">
           <div class="charge-glow"></div>
@@ -204,7 +243,11 @@
 
     <!-- キャンセルボタン -->
     <button class="btn btn-retreat" id="btn-retreat" onclick="retreatBattle()">
-      🏃 自分のペースで休む
+      <svg viewBox="0 0 100 100" class="btn-icon-sm">
+        <path d="M30,80 L40,60 L35,40 L50,20 L65,40 L60,60 L70,80" stroke="#E65100" stroke-width="6" fill="none" stroke-linecap="round" />
+        <circle cx="50" cy="15" r="10" fill="#E65100" />
+      </svg>
+      自分のペースで休む
     </button>
   </div>
 
@@ -217,13 +260,18 @@
       <div class="victory-enemy" id="victory-enemy"></div>
       <div class="explosion-particles" id="explosion-particles"></div>
 
-      <h2 class="victory-title" id="victory-title">撃破！！</h2>
+      <h2 class="victory-title" id="victory-title">撃破！</h2>
       <p class="victory-msg" id="victory-msg"></p>
 
       <!-- 獲得報酬 -->
       <div class="victory-rewards" id="victory-rewards">
         <div class="reward-item">
-          <span class="reward-icon">🪙</span>
+          <span class="reward-icon">
+            <svg viewBox="0 0 100 100" class="btn-icon-sm coin-icon">
+              <circle cx="50" cy="50" r="45" fill="#FFD740" stroke="#FFB300" stroke-width="2" />
+              <path d="M50,25 V75 M35,50 H65" stroke="#FFB300" stroke-width="8" stroke-linecap="round" />
+            </svg>
+          </span>
           <span class="reward-label">+<span id="reward-coin">0</span> コイン</span>
         </div>
       </div>
@@ -232,16 +280,16 @@
       <div class="new-medal-popup" id="new-medal-popup" style="display:none;">
         <div class="medal-shine"></div>
         <div class="medal-icon" id="new-medal-icon"></div>
-        <div class="medal-text">新しいメダルを獲得！</div>
+        <div class="medal-text">メダルを獲得した！</div>
       </div>
 
 
 
       <button class="btn btn-primary" onclick="showScreen('screen-home')" style="margin-top:24px;">
-        🏰 お部屋にもどる
+        ホームに戻る
       </button>
       <button class="btn btn-secondary" onclick="showScreen('screen-select')" style="margin-top:8px;">
-        ⚔️ 続けて戦う
+        クエストを続ける
       </button>
     </div>
   </div>
@@ -249,11 +297,11 @@
   <!-- ===== メダル図鑑画面 ===== -->
   <div id="screen-medals" class="screen">
     <div class="screen-header">
-      <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
+      <button class="btn-back" onclick="showScreen('screen-home')">← 戻る</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
-          <circle cx="50" cy="50" r="40" fill="#FFB74D"/>
-          <path d="M50,30 L55,45 L70,45 L58,55 L63,70 L50,60 L37,70 L42,55 L30,45 L45,45 Z" fill="#FFF"/>
+          <circle cx="50" cy="50" r="40" fill="#FFB74D" />
+          <path d="M50,30 L55,45 L70,45 L58,55 L63,70 L50,60 L37,70 L42,55 L30,45 L45,45 Z" fill="#FFF" />
         </svg>
         メダル図鑑
       </h2>
@@ -270,15 +318,19 @@
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
-          <rect x="20" y="35" width="60" height="45" rx="4" fill="#64B5F6"/>
-          <path d="M20,50 H80" stroke="#FFF" stroke-width="4"/>
-          <path d="M50,35 V80" stroke="#FFF" stroke-width="4"/>
+          <rect x="20" y="35" width="60" height="45" rx="4" fill="#64B5F6" />
+          <path d="M20,50 H80" stroke="#FFF" stroke-width="4" />
+          <path d="M50,35 V80" stroke="#FFF" stroke-width="4" />
         </svg>
         グッズ交換所
       </h2>
       <p>コインを使ってリラックスグッズを集めよう</p>
-      <div class="shop-coin-display" style="font-size: 1.2rem; margin-top: 8px; font-weight: bold; color: #5D4037;">
-        🪙 所持コイン: <span id="shop-coin-count">0</span>
+      <div class="shop-coin-display" style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-top: 8px; font-weight: bold; color: #5D4037;">
+        <svg viewBox="0 0 100 100" class="btn-icon-sm coin-icon" style="margin-right: 6px;">
+          <circle cx="50" cy="50" r="45" fill="#FFD740" stroke="#FFB300" stroke-width="2" />
+          <path d="M50,25 V75 M35,50 H65" stroke="#FFB300" stroke-width="8" stroke-linecap="round" />
+        </svg>
+        所持コイン: <span id="shop-coin-count">0</span>
       </div>
     </div>
     <div class="goods-grid" id="goods-grid">
@@ -291,7 +343,12 @@
   <!-- ===== 撤退確認モーダル ===== -->
   <div id="retreat-modal" class="modal-overlay" style="display:none;">
     <div class="modal-content">
-      <div class="retreat-icon">🏃</div>
+      <div class="retreat-icon">
+        <svg viewBox="0 0 100 100" style="width: 60px; height: 60px;">
+          <path d="M30,80 L40,60 L35,40 L50,20 L65,40 L60,60 L70,80" stroke="#E65100" stroke-width="6" fill="none" stroke-linecap="round" />
+          <circle cx="50" cy="15" r="10" fill="#E65100" />
+        </svg>
+      </div>
       <h3>休憩する？</h3>
       <p>ペナルティはないよ。<br>また挑戦しよう！</p>
       <div class="modal-buttons">
