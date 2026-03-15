@@ -128,7 +128,9 @@ body::before {
 
 /* ===== ボタン共通（手書き・木製看板風） ===== */
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 14px 24px;
   border: none;
