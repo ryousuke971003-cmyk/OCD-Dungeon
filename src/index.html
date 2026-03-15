@@ -45,8 +45,17 @@
         <div class="stat-card">
           <div class="stat-icon">
             <svg viewBox="0 0 100 100" class="svg-icon">
-              <path d="M20,80 L30,40 L70,20 L80,30 L60,70 Z" fill="#D35400" stroke="#5D4037" stroke-width="3" />
-              <rect x="15" y="75" width="15" height="10" rx="2" fill="#8D6E63" />
+              <!-- トロフィーの台座 -->
+              <rect x="30" y="75" width="40" height="10" rx="2" fill="#5D4037" />
+              <path d="M45,75 L45,65 L55,65 L55,75 Z" fill="#5D4037" />
+              <!-- トロフィーのカップ -->
+              <path d="M30,25 Q30,65 50,65 Q70,65 70,25 Z" fill="#FFD700" stroke="#B8860B" stroke-width="2" />
+              <!-- 取手（左） -->
+              <path d="M30,30 Q20,30 20,45 Q20,55 30,55" fill="none" stroke="#B8860B" stroke-width="3" stroke-linecap="round" />
+              <!-- 取手（右） -->
+              <path d="M70,30 Q80,30 80,45 Q80,55 70,55" fill="none" stroke="#B8860B" stroke-width="3" stroke-linecap="round" />
+              <!-- 輝き -->
+              <circle cx="40" cy="35" r="3" fill="#FFF" opacity="0.6" />
             </svg>
           </div>
           <div class="stat-value" id="total-wins">0</div>
@@ -114,7 +123,8 @@
       <button class="btn-back" onclick="showScreen('screen-home')">← もどる</button>
       <h2>
         <svg viewBox="0 0 100 100" class="header-icon">
-          <path d="M20,80 L30,40 L70,20 L80,30 L60,70 Z" fill="#D35400" />
+          <!-- トロフィー（簡略版） -->
+          <path d="M35,80 H65 M50,80 V70 M30,30 Q30,70 50,70 Q70,70 70,30 Z" fill="#FFD700" stroke="#B8860B" stroke-width="4" stroke-linejoin="round" />
         </svg>
         クエスト選択
       </h2>
