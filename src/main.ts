@@ -330,6 +330,7 @@ function getEl(id: string): HTMLElement {
 //  画面切り替え
 // =========================================================
 function showScreen(id: string): void {
+  if (document.body.classList.contains('is-transitioning')) return;
   // 戦闘画面以外に遷移する場合はタイマーを強制リセット
   if (id !== 'screen-battle') {
     if (state.timerInterval !== null) clearInterval(state.timerInterval);
