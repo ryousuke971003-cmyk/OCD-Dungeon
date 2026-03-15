@@ -523,6 +523,7 @@ function setupBattleScreen(): void {
 //  連打（タップ）処理
 // =========================================================
 function handleBattleTap(e: MouseEvent): void {
+  if (document.body.classList.contains('is-transitioning')) return;
   if (state.chargeRemaining <= 0 || state.currentScreen !== 'screen-battle') return;
 
   // 1タップにつき1チャージ減少
@@ -727,6 +728,7 @@ function createExplosionParticles(): void {
 //  グッズ交換制
 // =========================================================
 function buyGoods(id: string): void {
+  if (document.body.classList.contains('is-transitioning')) return;
   const goods = RELAX_GOODS.find(g => g.id === id);
   if (!goods) return;
   if (saveData.unlockedGoods.includes(id)) return;
