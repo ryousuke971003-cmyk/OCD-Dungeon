@@ -79,8 +79,8 @@
   </div>
 
   <!-- ===== 敵選択画面 ===== -->
-  <div id="screen-select" class="screen">
-    <div class="scrollable-content">
+  <div id="screen-select" class="screen" onclick="showScreen('screen-home')">
+    <div class="scrollable-content" onclick="event.stopPropagation()">
       <div class="screen-header">
         <button class="btn-back" onclick="showScreen('screen-home')">戻る</button>
         <h2>

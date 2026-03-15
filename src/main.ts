@@ -527,6 +527,12 @@ function handleBattleTap(e: MouseEvent): void {
   if (document.body.classList.contains('is-transitioning')) return;
   if (state.chargeRemaining <= 0 || state.currentScreen !== 'screen-battle') return;
 
+  // 敵本体(enemy-sprite)かタップボタン(btn-tap)以外へのタップは無視
+  const target = e.target as HTMLElement;
+  const isSprite = target.closest('#enemy-sprite');
+  const isBtn = target.closest('#btn-tap');
+  if (!isSprite && !isBtn) return;
+
   // 1タップにつき1チャージ減少
   const tapPower = 1;
   state.chargeRemaining = Math.max(0, state.chargeRemaining - tapPower);

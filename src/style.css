@@ -442,11 +442,15 @@ body::before {
 .enemy-card:nth-child(4n+3) { --r: -0.5; }
 .enemy-card:nth-child(4n+4) { --r: 1.5; }
 
-.enemy-card:hover {
-  background: var(--orange-light);
-  transform: scale(1.05) rotate(0deg);
-  box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1);
+/* PCでのみホバーエフェクトを有効化（モバイルのホバー残り防止） */
+@media (hover: hover) {
+  .enemy-card:hover {
+    background: var(--orange-light);
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1);
+  }
 }
+
 .enemy-card:active {
   transform: scale(0.98) rotate(0deg);
   box-shadow: none;
