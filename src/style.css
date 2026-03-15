@@ -238,7 +238,6 @@ body::before {
   inset: 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #FFF3E0, #FFE0B2);
   overflow: hidden;
   z-index: 0;
 }
